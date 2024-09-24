@@ -27,13 +27,6 @@ def leer_archivo_xml(ruta):
             print(f"Producto: {nombre_producto}, Elaboración: {elaboracion}, Máquina: {nombre}")
 
         maquinas.insertar(nueva_maquina)
-        
-        # Parseamos las instrucciones desde el nodo de cada máquina
-        instrucciones_xml = maquina.find('ListadoProductos')
-        for producto in instrucciones_xml:
-            elaboracion = producto.find('elaboracion').text
-            cadena_instruccion = CadenaEnlazada(elaboracion)
-            instrucciones.insertar(cadena_instruccion)
-            print(f"Instrucción analizada: {elaboracion}")
 
-    return maquinas, instrucciones
+
+    return maquinas, elaboracion
