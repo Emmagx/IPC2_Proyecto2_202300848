@@ -37,3 +37,17 @@ class ListaSimpleEnlazada:
             print(actual.valor, end=" -> ")
             actual = actual.siguiente
         print("None")
+        
+    def __iter__(self):
+        actual = self.cabeza
+        while actual:
+            yield actual.valor
+            actual = actual.siguiente
+
+    def __len__(self):
+        contador = 0
+        actual = self.cabeza
+        while actual:
+            contador += 1
+            actual = actual.siguiente
+        return contador
