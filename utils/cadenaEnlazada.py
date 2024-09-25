@@ -1,6 +1,6 @@
-class NodoCaracter:
-    def __init__(self, caracter):
-        self.caracter = caracter
+class NodoPalabra:
+    def __init__(self, palabra):
+        self.palabra = palabra  # Almacenar la palabra completa
         self.siguiente = None
 
 class CadenaEnlazada:
@@ -13,11 +13,10 @@ class CadenaEnlazada:
                 self.cabeza = cadena.cabeza  # Copiar la cabeza de otra cadena enlazada
 
     def crear_enlazada(self, cadena):
-        for caracter in cadena:
-            self.insertar(caracter)
+        self.insertar(cadena)
 
-    def insertar(self, caracter):
-        nuevo_nodo = NodoCaracter(caracter)
+    def insertar(self, palabra):
+        nuevo_nodo = NodoPalabra(palabra)  # Aquí se guarda la palabra completa
         if self.cabeza is None:
             self.cabeza = nuevo_nodo
         else:
@@ -31,7 +30,7 @@ class CadenaEnlazada:
         contador = 0
         while actual:
             if contador == indice:
-                return actual.caracter
+                return actual.palabra  # Retorna la palabra completa en la posición 'indice'
             actual = actual.siguiente
             contador += 1
         return None  # Si el índice está fuera de rango
@@ -47,17 +46,16 @@ class CadenaEnlazada:
     def __iter__(self):
         actual = self.cabeza
         while actual:
-            yield actual.caracter  # Cambiado de valor a caracter
+            yield actual.palabra  # Cambiado para iterar por palabras
             actual = actual.siguiente
-            
-    def obtener_subcadena(self, inicio, longitud):
 
+    def obtener_subcadena(self, inicio, longitud):
         nueva_cadena = CadenaEnlazada()
         actual = self.cabeza
         contador = 0
         while actual and contador < inicio + longitud:
             if contador >= inicio:
-                nueva_cadena.insertar(actual.caracter)
+                nueva_cadena.insertar(actual.palabra)
             actual = actual.siguiente
             contador += 1
         return nueva_cadena
@@ -67,7 +65,7 @@ class CadenaEnlazada:
         factor = 1
         actual = self.cabeza
         while actual:
-            resultado += (ord(actual.caracter) - ord('0')) * factor
+            resultado += (ord(actual.palabra) - ord('0')) * factor
             factor *= 10
             actual = actual.siguiente
         return resultado

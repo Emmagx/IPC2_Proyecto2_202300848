@@ -4,6 +4,12 @@ from backend.producto import Producto
 from utils.cadenaEnlazada import CadenaEnlazada
 from utils.listaDoblementeEnlazada import ListaDobleEnlazada as lista
 
+import xml.etree.ElementTree as ET
+from backend.maquina import Maquina
+from backend.producto import Producto
+from utils.cadenaEnlazada import CadenaEnlazada
+from utils.listaDoblementeEnlazada import ListaDobleEnlazada as lista
+
 def leer_archivo_xml(ruta):
     tree = ET.parse(ruta)
     root = tree.getroot()
@@ -29,4 +35,4 @@ def leer_archivo_xml(ruta):
         maquinas.insertar(nueva_maquina)
 
 
-    return maquinas, elaboracion
+    return maquinas

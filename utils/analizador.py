@@ -5,7 +5,7 @@ from utils.listaSimplementeEnlazada import ListaSimpleEnlazada  # Para almacenar
 
 def analizarArchivo(ruta):
     maquinas = ListaSimpleEnlazada()
-    maquinas, elaboracion = leer_archivo_xml(ruta)
+    maquinas = leer_archivo_xml(ruta)
 
     for index, maquina in enumerate(maquinas):
         for j in range(1, maquina.cantidad_componentes + 1):
@@ -22,4 +22,4 @@ def analizarArchivo(ruta):
         print(f"Componentes de la Máquina {index + 1}:")
         maquina.componentes.mostrar()        
         
-    return maquinas, elaboracion
+    return maquinas
