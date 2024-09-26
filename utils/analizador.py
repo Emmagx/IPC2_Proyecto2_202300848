@@ -1,7 +1,7 @@
 from utils.lecturaXML import leer_archivo_xml
 import xml.etree.ElementTree as ET
 from utils.cadenaEnlazada import CadenaEnlazada
-from utils.listaSimplementeEnlazada import ListaSimpleEnlazada  # Para almacenar las instrucciones
+from utils.listaSimplementeEnlazada import ListaSimpleEnlazada
 
 def analizarArchivo(ruta):
     maquinas = ListaSimpleEnlazada()

@@ -1,8 +1,8 @@
-from utils.listaSimplementeEnlazada import ListaSimpleEnlazada
+from utils.listaSimplementeEnlazada import ListaSimpleEnlazada as lista
 from utils.cadenaEnlazada import CadenaEnlazada
 
 class Producto:
-    def __init__(self, nombre, elaboracion):
+    def __init__(self, nombre):
         self.nombre = nombre
-        self.elaboracion = CadenaEnlazada(elaboracion)
-        self.componentes = ListaSimpleEnlazada()
+        self.elaboracion = lista()
+        self.componentes = lista()

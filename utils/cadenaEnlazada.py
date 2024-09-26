@@ -1,6 +1,6 @@
 class NodoPalabra:
     def __init__(self, palabra):
-        self.palabra = palabra  # Almacenar la palabra completa
+        self.palabra = palabra 
         self.siguiente = None
 
 class CadenaEnlazada:
@@ -10,13 +10,13 @@ class CadenaEnlazada:
             if isinstance(cadena, str):
                 self.crear_enlazada(cadena)
             elif isinstance(cadena, CadenaEnlazada):
-                self.cabeza = cadena.cabeza  # Copiar la cabeza de otra cadena enlazada
+                self.cabeza = cadena.cabeza
 
     def crear_enlazada(self, cadena):
         self.insertar(cadena)
 
     def insertar(self, palabra):
-        nuevo_nodo = NodoPalabra(palabra)  # Aquí se guarda la palabra completa
+        nuevo_nodo = NodoPalabra(palabra) 
         if self.cabeza is None:
             self.cabeza = nuevo_nodo
         else:
@@ -30,10 +30,10 @@ class CadenaEnlazada:
         contador = 0
         while actual:
             if contador == indice:
-                return actual.palabra  # Retorna la palabra completa en la posición 'indice'
+                return actual.palabra
             actual = actual.siguiente
             contador += 1
-        return None  # Si el índice está fuera de rango
+        return None
 
     def longitud(self):
         contador = 0
@@ -46,7 +46,7 @@ class CadenaEnlazada:
     def __iter__(self):
         actual = self.cabeza
         while actual:
-            yield actual.palabra  # Cambiado para iterar por palabras
+            yield actual.palabra
             actual = actual.siguiente
 
     def obtener_subcadena(self, inicio, longitud):
