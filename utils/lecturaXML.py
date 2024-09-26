@@ -8,7 +8,6 @@ def leer_archivo_xml(ruta):
     tree = ET.parse(ruta)
     root = tree.getroot()
     maquinas = lista()
-    
     print("Empezando lectura")
 
     for maquina in root.findall('Maquina'):
