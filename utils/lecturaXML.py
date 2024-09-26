@@ -18,18 +18,28 @@ def leer_archivo_xml(ruta):
         tiempo_ensamblaje = int(maquina.find("TiempoEnsamblaje").text)
         nueva_maquina = Maquina(nombre, cantidad_lineas, cantidad_componentes, tiempo_ensamblaje)
 
+        # Procesar los productos dentro de la máquina
         for producto in maquina.find('ListadoProductos'):
             nombre_producto = producto.find('nombre').text
             elaboracion_texto = producto.find('elaboracion').text
-
+            
             nuevo_producto = Producto(nombre_producto)
+            # Dividimos el texto de elaboración en palabras
             palabras = elaboracion_texto.split() 
+            
+            # Para cada palabra en las instrucciones
             for palabra in palabras:
-                nuevo_producto.elaboracion.insertar(palabra) 
+                # Creamos una cadena enlazada con cada palabra (caracteres individuales)
+                palabra_enlazada = CadenaEnlazada(palabra)  # Aquí la palabra se convierte en una CadenaEnlazada
+                
+                # Insertamos la palabra enlazada en la lista de elaboración del producto
+                nuevo_producto.elaboracion.insertar(palabra_enlazada)
 
+            # Insertamos el nuevo producto en la máquina
             nueva_maquina.productos.insertar(nuevo_producto)
             print(f"Producto: {nombre_producto}, Elaboración: {elaboracion_texto}, Máquina: {nombre}")
 
+        # Insertamos la máquina en la lista de máquinas
         maquinas.insertar(nueva_maquina)
 
     return maquinas

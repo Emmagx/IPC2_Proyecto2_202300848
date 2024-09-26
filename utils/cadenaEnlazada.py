@@ -1,6 +1,6 @@
 class NodoPalabra:
     def __init__(self, palabra):
-        self.palabra = palabra 
+        self.palabra = palabra  # Puede ser un carácter o palabra, según cómo lo uses.
         self.siguiente = None
 
 class CadenaEnlazada:
@@ -8,15 +8,17 @@ class CadenaEnlazada:
         self.cabeza = None
         if cadena is not None:
             if isinstance(cadena, str):
-                self.crear_enlazada(cadena)
+                self.crear_enlazada(cadena)  # Creamos la cadena enlazada a partir de una palabra
             elif isinstance(cadena, CadenaEnlazada):
                 self.cabeza = cadena.cabeza
 
     def crear_enlazada(self, cadena):
-        self.insertar(cadena)
+        # Aquí descomponemos la cadena en caracteres y los insertamos como nodos individuales
+        for caracter in cadena:
+            self.insertar(caracter)
 
     def insertar(self, palabra):
-        nuevo_nodo = NodoPalabra(palabra) 
+        nuevo_nodo = NodoPalabra(palabra)  # Cada nodo contiene un carácter
         if self.cabeza is None:
             self.cabeza = nuevo_nodo
         else:
@@ -26,11 +28,12 @@ class CadenaEnlazada:
             actual.siguiente = nuevo_nodo
 
     def obtener(self, indice):
+        # Este método obtiene el carácter en una posición específica
         actual = self.cabeza
         contador = 0
         while actual:
             if contador == indice:
-                return actual.palabra
+                return actual.palabra  # Devuelve el carácter en el nodo
             actual = actual.siguiente
             contador += 1
         return None
