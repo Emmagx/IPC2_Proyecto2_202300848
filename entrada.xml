@@ -24,7 +24,7 @@
         <ListadoProductos>
             <Producto>
                 <nombre>Laptop</nombre>
-                <elaboracion>L1C1 L1C2 L2C1</elaboracion>
+                <elaboracion>L1C1 L3C1 L2C1</elaboracion>
             </Producto>
         </ListadoProductos>
     </Maquina>

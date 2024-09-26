@@ -51,3 +51,24 @@ class ListaSimpleEnlazada:
             contador += 1
             actual = actual.siguiente
         return contador
+
+    def obtener_por_posicion(self, posicion):
+        actual = self.cabeza
+        contador = 0
+        while actual:
+            if contador == posicion:
+                return actual.valor
+            actual = actual.siguiente
+            contador += 1
+        return None
+    
+    def actualizar_por_posicion(self, posicion, nuevo_valor):
+        actual = self.cabeza
+        contador = 0
+        while actual:
+            if contador == posicion:
+                actual.valor = nuevo_valor 
+                return True
+            actual = actual.siguiente
+            contador += 1
+        return False 
