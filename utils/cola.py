@@ -21,7 +21,7 @@ class Cola:
         if not self.is_empty():
             valor = self.frente.valor
             self.frente = self.frente.siguiente
-            if self.frente is None:  # Si la cola queda vacía
+            if self.frente is None: 
                 self.final = None
             return valor
         return None  # Cola vacía
