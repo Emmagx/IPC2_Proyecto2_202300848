@@ -11,41 +11,67 @@ def extraer_linea_componente(instruccion):
 def simular_proceso_creacion(maquina, producto):
     print(f"Simulando ensamblaje para el producto: {producto.nombre}")
     tiempo_total = 0
-    movimientos_brazos = ListaSimpleEnlazada()  
-    tiempos_ensamblaje = ListaSimpleEnlazada()  
+    movimientos_brazos = ListaSimpleEnlazada()  # Guarda la posición actual de cada brazo
+    tiempos_ensamblaje = ListaSimpleEnlazada()  # Guarda si una línea está ensamblando (0 = no, 1 = ensamblando)
+    instrucciones_por_linea = ListaSimpleEnlazada()  # Instrucciones para cada línea de ensamblaje
     
-    # Inicializar los movimientos y ensamblajes
+    # Inicializamos las posiciones de los brazos y tiempos de ensamblaje para cada línea de ensamblaje
     for _ in range(maquina.cantidad_lineas):
-        movimientos_brazos.insertar(0)
-        tiempos_ensamblaje.insertar(0)
+        movimientos_brazos.insertar(0)  # Todos los brazos empiezan en la posición 0
+        tiempos_ensamblaje.insertar(0)  # Ninguna línea está ensamblando al principio
+        instrucciones_por_linea.insertar(None)  # Inicialmente no hay instrucciones asignadas
 
-    instrucciones = producto.elaboracion
-    actual_instruccion = instrucciones.cabeza
+    instrucciones = producto.elaboracion  # Las instrucciones del producto
+    actual_instruccion = instrucciones.cabeza  # Primera instrucción
+
+    # Almacenar las instrucciones por línea de ensamblaje
     while actual_instruccion:
         linea, componente = extraer_linea_componente(actual_instruccion.valor)
-        linea -= 1  
-        
-        posicion_brazo = movimientos_brazos.obtener_por_posicion(linea)
-        tiempo_movimiento = abs(posicion_brazo - componente) 
-        
-        tiempo_ensamblar = maquina.tiempo_ensamblaje - 1
-        if tiempo_movimiento > 0:
-            for t in range(1, tiempo_movimiento + 1):
-                tiempo_total += 1
-                print(f"{tiempo_total}er segundo: Moviendo brazo de la línea {linea + 1} hacia el componente {componente}")
-        else:
-            tiempo_total += 1
-
-        for t in range(tiempo_ensamblar):
-            tiempo_total += 1
-            print(f"{tiempo_total}er segundo: Ensamblando componente {componente} en la línea {linea + 1}")
-        
-        movimientos_brazos.actualizar_por_posicion(linea, componente)
-
+        instrucciones_por_linea.actualizar_por_posicion(linea - 1, (linea - 1, componente))  # Guardar instrucción en la lista
         actual_instruccion = actual_instruccion.siguiente
+
+    ensamblando = False
+    ensamblando_linea = -1
+    
+    # Mientras haya instrucciones por ejecutar en alguna línea
+    while any(instrucciones_por_linea.obtener_por_posicion(i) is not None for i in range(maquina.cantidad_lineas)):
+        tiempo_total += 1
+        print(f"\n{tiempo_total}er segundo:")
+
+        # Revisamos todas las líneas para mover brazos si es necesario
+        for linea in range(maquina.cantidad_lineas):
+            instruccion = instrucciones_por_linea.obtener_por_posicion(linea)
+            if instruccion is not None:
+                posicion_brazo = movimientos_brazos.obtener_por_posicion(linea)
+                _, componente = instruccion
+
+                # Si la línea no está ensamblando, mover el brazo
+                if not ensamblando:
+                    if posicion_brazo < componente:
+                        # Mover el brazo hacia adelante, un paso por segundo
+                        movimientos_brazos.actualizar_por_posicion(linea, posicion_brazo + 1)
+                        print(f"Línea {linea + 1} moviendo brazo hacia el componente {componente}. Ahora en posición {posicion_brazo + 1}")
+                    elif posicion_brazo > componente:
+                        # Mover el brazo hacia atrás, un paso por segundo
+                        movimientos_brazos.actualizar_por_posicion(linea, posicion_brazo - 1)
+                        print(f"Línea {linea + 1} moviendo brazo hacia el componente {componente}. Ahora en posición {posicion_brazo - 1}")
+                    elif posicion_brazo == componente:
+                        # Si el brazo está en la posición correcta, ensamblar
+                        ensamblando = True
+                        ensamblando_linea = linea
+                        tiempos_ensamblaje.actualizar_por_posicion(linea, 1)
+                        instrucciones_por_linea.actualizar_por_posicion(linea, None)  # Marcar la instrucción como realizada
+                        print(f"Línea {linea + 1} ensamblando componente {componente}")
+
+        # Terminar ensamblaje
+        if ensamblando:
+            print(f"Línea {ensamblando_linea + 1} termina ensamblaje")
+            ensamblando = False
+            tiempos_ensamblaje.actualizar_por_posicion(ensamblando_linea, 0)
 
     print(f"Producto {producto.nombre} ensamblado en {tiempo_total} segundos.\n")
 
+    
 def ejecutar_simulacion(ruta_archivo_xml):
     maquinas = analizarArchivo(ruta_archivo_xml)
     actual_maquina = maquinas.cabeza
