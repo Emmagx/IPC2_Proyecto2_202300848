@@ -52,6 +52,9 @@ class ListaSimpleEnlazada:
             actual = actual.siguiente
         return contador
 
+    def longitud(self):
+        return self.__len__()
+
     def obtener_por_posicion(self, posicion):
         actual = self.cabeza
         contador = 0
@@ -71,4 +74,4 @@ class ListaSimpleEnlazada:
                 return True
             actual = actual.siguiente
             contador += 1
-        return False 
+        return False

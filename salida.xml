@@ -1,2 +1,83 @@
 <?xml version='1.0' encoding='utf-8'?>
-<SalidaSimulacion><Maquina><Nombre>Maquina1</Nombre><ListadoProductos><Producto><Nombre>SmartWatch</Nombre><TiempoTotal>9</TiempoTotal><ElaboracionOptima><Tiempo NoSegundo="1"><LineaEnsamblaje NoLinea="1">Línea 1: Moviendo brazo hacia el componente 2 en línea 1</LineaEnsamblaje></Tiempo><Tiempo NoSegundo="2"><LineaEnsamblaje NoLinea="2">Línea 1: Moviendo brazo hacia el componente 2 en línea 1</LineaEnsamblaje></Tiempo><Tiempo NoSegundo="3"><LineaEnsamblaje NoLinea="3">Línea 2: Moviendo brazo hacia el componente 1 en línea 2</LineaEnsamblaje></Tiempo><Tiempo NoSegundo="4"><LineaEnsamblaje NoLinea="4">Línea 2: Moviendo brazo hacia el componente 2 en línea 2</LineaEnsamblaje></Tiempo><Tiempo NoSegundo="5"><LineaEnsamblaje NoLinea="5">Línea 2: Moviendo brazo hacia el componente 2 en línea 2</LineaEnsamblaje></Tiempo><Tiempo NoSegundo="6"><LineaEnsamblaje NoLinea="6">Línea 1: Moviendo brazo hacia el componente 4 en línea 1</LineaEnsamblaje></Tiempo><Tiempo NoSegundo="7"><LineaEnsamblaje NoLinea="7">Línea 1: Moviendo brazo hacia el componente 4 en línea 1</LineaEnsamblaje></Tiempo><Tiempo NoSegundo="8"><LineaEnsamblaje NoLinea="8">Línea 1: Moviendo brazo hacia el componente 4 en línea 1</LineaEnsamblaje></Tiempo><Tiempo NoSegundo="9"><LineaEnsamblaje NoLinea="9">Línea 1: Moviendo brazo hacia el componente 4 en línea 1</LineaEnsamblaje></Tiempo></ElaboracionOptima></Producto><Producto><Nombre>Smartphone</Nombre><TiempoTotal>10</TiempoTotal><ElaboracionOptima><Tiempo NoSegundo="1"><LineaEnsamblaje NoLinea="1">Línea 1: Moviendo brazo hacia el componente 1 en línea 1</LineaEnsamblaje></Tiempo><Tiempo NoSegundo="2"><LineaEnsamblaje NoLinea="2">Línea 1: Moviendo brazo hacia el componente 2 en línea 1</LineaEnsamblaje></Tiempo><Tiempo NoSegundo="3"><LineaEnsamblaje NoLinea="3">Línea 1: Moviendo brazo hacia el componente 2 en línea 1</LineaEnsamblaje></Tiempo><Tiempo NoSegundo="4"><LineaEnsamblaje NoLinea="4">Línea 2: Moviendo brazo hacia el componente 3 en línea 2</LineaEnsamblaje></Tiempo><Tiempo NoSegundo="5"><LineaEnsamblaje NoLinea="5">Línea 2: Moviendo brazo hacia el componente 3 en línea 2</LineaEnsamblaje></Tiempo><Tiempo NoSegundo="6"><LineaEnsamblaje NoLinea="6">Línea 2: Moviendo brazo hacia el componente 3 en línea 2</LineaEnsamblaje></Tiempo><Tiempo NoSegundo="7"><LineaEnsamblaje NoLinea="7">Línea 2: Moviendo brazo hacia el componente 4 en línea 2</LineaEnsamblaje></Tiempo><Tiempo NoSegundo="8"><LineaEnsamblaje NoLinea="8">Línea 2: Moviendo brazo hacia el componente 4 en línea 2</LineaEnsamblaje></Tiempo><Tiempo NoSegundo="9"><LineaEnsamblaje NoLinea="9">Línea 2: Moviendo brazo hacia el componente 4 en línea 2</LineaEnsamblaje></Tiempo><Tiempo NoSegundo="10"><LineaEnsamblaje NoLinea="10">Línea 2: Moviendo brazo hacia el componente 4 en línea 2</LineaEnsamblaje></Tiempo></ElaboracionOptima></Producto></ListadoProductos></Maquina><Maquina><Nombre>Maquina2</Nombre><ListadoProductos><Producto><Nombre>Laptop</Nombre><TiempoTotal>5</TiempoTotal><ElaboracionOptima><Tiempo NoSegundo="1"><LineaEnsamblaje NoLinea="1">Línea 1: Moviendo brazo hacia el componente 1 en línea 1</LineaEnsamblaje></Tiempo><Tiempo NoSegundo="2"><LineaEnsamblaje NoLinea="2">Línea 1: Moviendo brazo hacia el componente 3 en línea 1</LineaEnsamblaje></Tiempo><Tiempo NoSegundo="3"><LineaEnsamblaje NoLinea="3">Línea 1: Moviendo brazo hacia el componente 3 en línea 1</LineaEnsamblaje></Tiempo><Tiempo NoSegundo="4"><LineaEnsamblaje NoLinea="4">Línea 1: Moviendo brazo hacia el componente 3 en línea 1</LineaEnsamblaje></Tiempo><Tiempo NoSegundo="5"><LineaEnsamblaje NoLinea="5">Línea 1: Moviendo brazo hacia el componente 1 en línea 1</LineaEnsamblaje></Tiempo></ElaboracionOptima></Producto></ListadoProductos></Maquina></SalidaSimulacion>
+<SalidaSimulacion>
+    <Maquina>
+        <Nombre>Maquina1</Nombre>
+        <ListadoProductos>
+            <Producto>
+                <Nombre>SmartWatch</Nombre>
+                <TiempoTotal>5</TiempoTotal>
+                <ElaboracionOptima>
+                    <Tiempo NoSegundo="1">
+                        <LineaEnsamblaje NoLinea="1">Línea 1: Moviendo brazo hacia el componente 4</LineaEnsamblaje>
+                        <LineaEnsamblaje NoLinea="1">Línea 2: Moviendo brazo hacia el componente 2</LineaEnsamblaje>
+                        </Tiempo>
+                    <Tiempo NoSegundo="2">
+                        <LineaEnsamblaje NoLinea="2">Línea 1: Moviendo brazo hacia el componente 4</LineaEnsamblaje>
+                        <LineaEnsamblaje NoLinea="2">Línea 2: Moviendo brazo hacia el componente 2</LineaEnsamblaje>
+                        </Tiempo>
+                    <Tiempo NoSegundo="3">
+                        <LineaEnsamblaje NoLinea="3">Línea 1: Moviendo brazo hacia el componente 4</LineaEnsamblaje>
+                        <LineaEnsamblaje NoLinea="3">Línea 2: Ensamblando componente 2</LineaEnsamblaje>
+                        </Tiempo>
+                    <Tiempo NoSegundo="4">
+                        <LineaEnsamblaje NoLinea="4">Línea 1: Moviendo brazo hacia el componente 4</LineaEnsamblaje>
+                        </Tiempo>
+                    <Tiempo NoSegundo="5">
+                        <LineaEnsamblaje NoLinea="5">Línea 1: Ensamblando componente 4</LineaEnsamblaje>
+                        </Tiempo>
+                    </ElaboracionOptima>
+                </Producto>
+            <Producto>
+                <Nombre>Smartphone</Nombre>
+                <TiempoTotal>6</TiempoTotal>
+                <ElaboracionOptima>
+                    <Tiempo NoSegundo="1">
+                        <LineaEnsamblaje NoLinea="1">Línea 1: Moviendo brazo hacia el componente 2</LineaEnsamblaje>
+                        <LineaEnsamblaje NoLinea="1">Línea 2: Moviendo brazo hacia el componente 4</LineaEnsamblaje>
+                        </Tiempo>
+                    <Tiempo NoSegundo="2">
+                        <LineaEnsamblaje NoLinea="2">Línea 1: Moviendo brazo hacia el componente 2</LineaEnsamblaje>
+                        <LineaEnsamblaje NoLinea="2">Línea 2: Moviendo brazo hacia el componente 4</LineaEnsamblaje>
+                        </Tiempo>
+                    <Tiempo NoSegundo="3">
+                        <LineaEnsamblaje NoLinea="3">Línea 1: Ensamblando componente 2</LineaEnsamblaje>
+                        </Tiempo>
+                    <Tiempo NoSegundo="4">
+                        <LineaEnsamblaje NoLinea="4">Línea 2: Moviendo brazo hacia el componente 4</LineaEnsamblaje>
+                        </Tiempo>
+                    <Tiempo NoSegundo="5">
+                        <LineaEnsamblaje NoLinea="5">Línea 2: Moviendo brazo hacia el componente 4</LineaEnsamblaje>
+                        </Tiempo>
+                    <Tiempo NoSegundo="6">
+                        <LineaEnsamblaje NoLinea="6">Línea 2: Ensamblando componente 4</LineaEnsamblaje>
+                        </Tiempo>
+                    </ElaboracionOptima>
+                </Producto>
+            </ListadoProductos>
+        </Maquina>
+    <Maquina>
+        <Nombre>Maquina2</Nombre>
+        <ListadoProductos>
+            <Producto>
+                <Nombre>Laptop</Nombre>
+                <TiempoTotal>4</TiempoTotal>
+                <ElaboracionOptima>
+                    <Tiempo NoSegundo="1">
+                        <LineaEnsamblaje NoLinea="1">Línea 1: Moviendo brazo hacia el componente 1</LineaEnsamblaje>
+                        <LineaEnsamblaje NoLinea="1">Línea 2: Moviendo brazo hacia el componente 1</LineaEnsamblaje>
+                        <LineaEnsamblaje NoLinea="1">Línea 3: Moviendo brazo hacia el componente 1</LineaEnsamblaje>
+                        </Tiempo>
+                    <Tiempo NoSegundo="2">
+                        <LineaEnsamblaje NoLinea="2">Línea 1: Ensamblando componente 1</LineaEnsamblaje>
+                        </Tiempo>
+                    <Tiempo NoSegundo="3">
+                        <LineaEnsamblaje NoLinea="3">Línea 2: Ensamblando componente 1</LineaEnsamblaje>
+                        </Tiempo>
+                    <Tiempo NoSegundo="4">
+                        <LineaEnsamblaje NoLinea="4">Línea 3: Ensamblando componente 1</LineaEnsamblaje>
+                        </Tiempo>
+                    </ElaboracionOptima>
+                </Producto>
+            </ListadoProductos>
+        </Maquina>
+    </SalidaSimulacion>
