@@ -12,14 +12,13 @@ def extraer_linea_componente(instruccion):
 def simular_proceso_creacion(maquina, producto):
     print(f"Simulando ensamblaje para el producto: {producto.nombre}")
     tiempo_total = 0
-    movimientos_brazos = ListaSimpleEnlazada()  # Guarda la posición actual de cada brazo
-    instrucciones_por_linea = ListaSimpleEnlazada()  # Instrucciones para cada línea de ensamblaje
-    producto.historial_ensamblaje = HistorialEnsamblaje()  # Historial de la simulación
+    movimientos_brazos = ListaSimpleEnlazada()
+    instrucciones_por_linea = ListaSimpleEnlazada()
+    producto.historial_ensamblaje = HistorialEnsamblaje()
 
-    # Inicializamos las posiciones de los brazos y tiempos de ensamblaje para cada línea de ensamblaje
     for _ in range(maquina.cantidad_lineas):
-        movimientos_brazos.insertar(0)  # Todos los brazos empiezan en la posición 0
-        instrucciones_por_linea.insertar(None)  # Inicialmente no hay instrucciones asignadas
+        movimientos_brazos.insertar(0)
+        instrucciones_por_linea.insertar(None)
 
     instrucciones = producto.elaboracion
     actual_instruccion = instrucciones.cabeza
@@ -38,7 +37,6 @@ def simular_proceso_creacion(maquina, producto):
         tiempo_total += 1
         print(f"\n{tiempo_total}er segundo:")
 
-        # Revisamos todas las líneas para mover brazos si es necesario
         for linea in range(maquina.cantidad_lineas):
             instruccion = instrucciones_por_linea.obtener_por_posicion(linea)
             if instruccion is not None:
