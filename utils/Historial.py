@@ -12,7 +12,7 @@ class HistorialEnsamblaje:
         # Obtener la lista de acciones para el segundo especificado
         acciones_en_segundo = self.segundos.obtener_por_posicion(segundo - 1)
         # Insertar la acción en esa lista
-        acciones_en_segundo.insertar(f"Línea {linea}: {accion}")
+        acciones_en_segundo.insertar(accion)
 
     def obtener_acciones_por_segundo(self, segundo):
         # Obtener las acciones del segundo dado (o None si no hay acciones en ese segundo)

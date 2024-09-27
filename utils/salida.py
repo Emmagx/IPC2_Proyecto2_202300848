@@ -1,6 +1,5 @@
 import xml.etree.ElementTree as ET
 
-
 def indent(elem, level=0):
     """Función auxiliar para agregar indentación al XML."""
     i = "\n" + level * "    "  # Cuatro espacios por nivel
@@ -16,7 +15,6 @@ def indent(elem, level=0):
     else:
         if level and (not elem.tail or not elem.tail.strip()):
             elem.tail = i
-
 
 def generar_salida_xml(maquinas, ruta_salida_xml):
     root = ET.Element("SalidaSimulacion")
@@ -51,10 +49,13 @@ def generar_salida_xml(maquinas, ruta_salida_xml):
 
                 if acciones_segundo:
                     accion_actual = acciones_segundo.cabeza
+                    no_linea = 1  # Inicializamos el número de línea
                     while accion_actual:
-                        linea_ensamblaje_elem = ET.SubElement(tiempo_elem, "LineaEnsamblaje", NoLinea=str(segundo_actual))
-                        linea_ensamblaje_elem.text = accion_actual.valor
+                        # Convertimos la descripción en el formato LiCj
+                        linea_ensamblaje_elem = ET.SubElement(tiempo_elem, "", NoLinea=str(no_linea))
+                        linea_ensamblaje_elem.text = f"L{no_linea}C{accion_actual.valor}"  # Formato LiCj
                         accion_actual = accion_actual.siguiente
+                        no_linea += 1  # Incrementamos el número de línea para cada acción
 
                 segundo_actual += 1
 
@@ -68,3 +69,4 @@ def generar_salida_xml(maquinas, ruta_salida_xml):
     tree = ET.ElementTree(root)
     tree.write(ruta_salida_xml, encoding="utf-8", xml_declaration=True)
     print(f"Archivo de salida guardado en {ruta_salida_xml}")
+
