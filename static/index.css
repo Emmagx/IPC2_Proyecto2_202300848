@@ -1,0 +1,125 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e6f2ff;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: #f0f0f0;
+    padding: 10px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+}
+
+header nav ul li {
+    margin-right: 20px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.simulation {
+    background-color: #cce6ff;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.simulation h1 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.simulation h3 {
+    text-align: center;
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.components {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.component-list {
+    list-style: none;
+    padding: 0;
+}
+
+.process-bar {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.process-bar button {
+    padding: 10px 20px;
+    background-color: white;
+    border: 1px solid #333;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.process-bar button:hover {
+    background-color: #f0f0f0;
+}
+
+.table-container {
+    margin-top: 20px;
+    background-color: #b3d1ff;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+table {
+    width: 60%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    border: 1px solid #333;
+    padding: 10px;
+    text-align: center;
+}
+
+.timer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.clock-icon {
+    width: 50px;
+    height: 50px;
+    background: url('clock-icon.png') no-repeat center center;
+    background-size: cover;
+}
+
+.timer span {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}

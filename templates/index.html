@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <title>Simulador de Ensamblaje</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="#">Archivo</a></li>
+                    <li><a href="#">Reportes</a></li>
+                    <li><a href="#">Ayuda</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <div class="simulation">
+                <h1>SmartWatch</h1>
+                <h3>Componentes Necesarios</h3>
+                <div class="components">
+                    <ul class="component-list">
+                        <li>Componente A</li>
+                        <li>Componente B</li>
+                        <li>Componente C</li>
+                    </ul>
+                    <ul class="component-list">
+                        <li>Componente D</li>
+                        <li>Componente E</li>
+                    </ul>
+                </div>
+                <h3>Process Bar</h3>
+                <div class="process-bar">
+                    <button>Step 1</button>
+                    <button>Step 2</button>
+                    <button>Step 3</button>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tiempo</th>
+                            <th>Línea 1</th>
+                            <th>Línea 2</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1er seg</td>
+                            <td>Mover - C1</td>
+                            <td>MB-C1</td>
+                        </tr>
+                        <tr>
+                            <td>2do seg</td>
+                            <td>Mover C2</td>
+                            <td>No hacer nada</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="timer">
+                    <div class="clock-icon"></div>
+                    <span>5 Seg</span>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
