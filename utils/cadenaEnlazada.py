@@ -1,3 +1,4 @@
+from utils.listaSimplementeEnlazada import ListaSimpleEnlazada
 class NodoPalabra:
     def __init__(self, palabra):
         self.palabra = palabra 
@@ -70,3 +71,11 @@ class CadenaEnlazada:
             factor *= 10
             actual = actual.siguiente
         return resultado
+    
+    def __str__(self):
+        palabras = ListaSimpleEnlazada()
+        actual = self.cabeza
+        while actual:
+            palabras.insertar(actual.palabra)
+            actual = actual.siguiente
+        return ''.join(palabras)

@@ -4,6 +4,9 @@ from utils.cadenaEnlazada import CadenaEnlazada
 from utils.analizador import analizarArchivo
 from utils.Historial import HistorialEnsamblaje
 from utils.salida import generar_salida_xml
+from utils.generarHTML import generar_reporte_html
+from utils.generarGrafo import generar_grafo_ensamblaje
+
 def extraer_linea_componente(instruccion):
     linea_caracter = instruccion.obtener(1)  
     componente_caracter = instruccion.obtener(3)
@@ -72,6 +75,19 @@ def simular_proceso_creacion(maquina, producto):
     producto.tiempo_total_ensamblaje = tiempo_total
     print(f"Producto {producto.nombre} ensamblado en {tiempo_total} segundos.\n")
 
+    # *** Generar el reporte HTML y el gráfico del ensamblaje ***
+    # Definir las rutas para los archivos de salida
+    ruta_reporte_html = f"reporte_{producto.nombre}.html"
+    ruta_grafo = f"grafo_{producto.nombre}"
+    
+    # Generar el reporte HTML
+    generar_reporte_html(maquina, producto, ruta_reporte_html)
+    
+    # Generar el gráfico de ensamblaje
+    generar_grafo_ensamblaje(producto, ruta_grafo)
+
+    print(f"Reporte HTML generado: {ruta_reporte_html}")
+    print(f"Grafo de ensamblaje generado: {ruta_grafo}.png")
     
 def ejecutar_simulacion(ruta_archivo_xml, ruta_salida_xml):
     maquinas = analizarArchivo(ruta_archivo_xml)
