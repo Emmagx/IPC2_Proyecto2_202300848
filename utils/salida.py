@@ -51,9 +51,10 @@ def generar_salida_xml(maquinas, ruta_salida_xml):
                     accion_actual = acciones_segundo.cabeza
                     no_linea = 1 
                     while accion_actual:
-                       
-                        linea_ensamblaje_elem = ET.SubElement(tiempo_elem, "", NoLinea=str(no_linea))
-                        linea_ensamblaje_elem.text = f"L{no_linea}C{accion_actual.valor}" 
+                        linea = accion_actual.valor.linea  # Accedemos a la línea
+                        componente = accion_actual.valor.componente  # Accedemos al componente
+                        linea_ensamblaje_elem = ET.SubElement(tiempo_elem, "Linea", NoLinea=str(no_linea))
+                        linea_ensamblaje_elem.text = f"C{componente}"  # Solo guardamos el componente
                         accion_actual = accion_actual.siguiente
                         no_linea += 1
 
@@ -68,4 +69,3 @@ def generar_salida_xml(maquinas, ruta_salida_xml):
     tree = ET.ElementTree(root)
     tree.write(ruta_salida_xml, encoding="utf-8", xml_declaration=True)
     print(f"Archivo de salida guardado en {ruta_salida_xml}")
-

@@ -8,22 +8,22 @@
                 <TiempoTotal>5</TiempoTotal>
                 <ElaboracionOptima>
                     <Tiempo NoSegundo="1">
-                        < NoLinea="1">L1C(1, 4)</>
-                        < NoLinea="2">L2C(2, 2)</>
+                        <Linea NoLinea="1">C4</Linea>
+                        <Linea NoLinea="2">C2</Linea>
                         </Tiempo>
                     <Tiempo NoSegundo="2">
-                        < NoLinea="1">L1C(1, 4)</>
-                        < NoLinea="2">L2C(2, 2)</>
+                        <Linea NoLinea="1">C4</Linea>
+                        <Linea NoLinea="2">C2</Linea>
                         </Tiempo>
                     <Tiempo NoSegundo="3">
-                        < NoLinea="1">L1C(1, 4)</>
-                        < NoLinea="2">L2C(2, 2)</>
+                        <Linea NoLinea="1">C4</Linea>
+                        <Linea NoLinea="2">C2</Linea>
                         </Tiempo>
                     <Tiempo NoSegundo="4">
-                        < NoLinea="1">L1C(1, 4)</>
+                        <Linea NoLinea="1">C4</Linea>
                         </Tiempo>
                     <Tiempo NoSegundo="5">
-                        < NoLinea="1">L1C(1, 4)</>
+                        <Linea NoLinea="1">C4</Linea>
                         </Tiempo>
                     </ElaboracionOptima>
                 </Producto>
@@ -32,22 +32,22 @@
                 <TiempoTotal>5</TiempoTotal>
                 <ElaboracionOptima>
                     <Tiempo NoSegundo="1">
-                        < NoLinea="1">L1C(1, 4)</>
-                        < NoLinea="2">L2C(2, 2)</>
+                        <Linea NoLinea="1">C4</Linea>
+                        <Linea NoLinea="2">C2</Linea>
                         </Tiempo>
                     <Tiempo NoSegundo="2">
-                        < NoLinea="1">L1C(1, 4)</>
-                        < NoLinea="2">L2C(2, 2)</>
+                        <Linea NoLinea="1">C4</Linea>
+                        <Linea NoLinea="2">C2</Linea>
                         </Tiempo>
                     <Tiempo NoSegundo="3">
-                        < NoLinea="1">L1C(1, 4)</>
-                        < NoLinea="2">L2C(2, 2)</>
+                        <Linea NoLinea="1">C4</Linea>
+                        <Linea NoLinea="2">C2</Linea>
                         </Tiempo>
                     <Tiempo NoSegundo="4">
-                        < NoLinea="1">L1C(1, 4)</>
+                        <Linea NoLinea="1">C4</Linea>
                         </Tiempo>
                     <Tiempo NoSegundo="5">
-                        < NoLinea="1">L1C(1, 4)</>
+                        <Linea NoLinea="1">C4</Linea>
                         </Tiempo>
                     </ElaboracionOptima>
                 </Producto>
@@ -61,20 +61,20 @@
                 <TiempoTotal>7</TiempoTotal>
                 <ElaboracionOptima>
                     <Tiempo NoSegundo="1">
-                        < NoLinea="1">L1C(1, 1)</>
-                        < NoLinea="2">L2C(2, 1)</>
-                        < NoLinea="3">L3C(3, 1)</>
+                        <Linea NoLinea="1">C1</Linea>
+                        <Linea NoLinea="2">C1</Linea>
+                        <Linea NoLinea="3">C1</Linea>
                         </Tiempo>
                     <Tiempo NoSegundo="2">
-                        < NoLinea="1">L1C(1, 1)</>
+                        <Linea NoLinea="1">C1</Linea>
                         </Tiempo>
                     <Tiempo NoSegundo="3" />
                     <Tiempo NoSegundo="4">
-                        < NoLinea="1">L1C(2, 1)</>
+                        <Linea NoLinea="1">C1</Linea>
                         </Tiempo>
                     <Tiempo NoSegundo="5" />
                     <Tiempo NoSegundo="6">
-                        < NoLinea="1">L1C(3, 1)</>
+                        <Linea NoLinea="1">C1</Linea>
                         </Tiempo>
                     </ElaboracionOptima>
                 </Producto>

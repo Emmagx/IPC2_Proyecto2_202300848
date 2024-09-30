@@ -3,7 +3,7 @@ from utils.listaSimplementeEnlazada import ListaSimpleEnlazada
 class AccionEnsamblaje:
     def __init__(self, linea, accion):
         self.linea = linea
-        self.accion = accion
+        self.componente = accion
 
 def agregar_accion(self, segundo, linea, accion):
     while len(self.segundos) < segundo:

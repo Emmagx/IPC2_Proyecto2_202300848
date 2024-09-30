@@ -5,15 +5,21 @@ def generar_reporte_html(maquina, producto, ruta_salida_html):
         archivo_html.write(f"<p>Máquina: {maquina.nombre}</p>")
         archivo_html.write(f"<p>Tiempo total de ensamblaje: {producto.tiempo_total_ensamblaje} segundos</p>")
         
-        archivo_html.write("<table border='1'><tr><th>Segundo</th><th>Línea</th><th>Acción</th></tr>")
+        archivo_html.write("<table border='1'><tr><th>Segundo</th><th>Línea</th><th>Componente</th></tr>")
 
         segundo = 1
-        for acciones in producto.historial_ensamblaje.segundos:
+        while segundo <= producto.historial_ensamblaje.segundos.longitud():
+            acciones = producto.historial_ensamblaje.obtener_acciones_por_segundo(segundo)
             if acciones:
-                for accion in acciones:
-                    linea, accion_realizada = accion
-                    archivo_html.write(f"<tr><td>{segundo}</td><td>{linea}</td><td>{accion_realizada}</td></tr>")
+                accion_actual = acciones.cabeza
+                while accion_actual:
+                    linea = accion_actual.valor.linea  # Accedemos a la línea
+                    componente = accion_actual.valor.componente  # Accedemos al componente
+                    archivo_html.write(f"<tr><td>{segundo}</td><td>{linea}</td><td>{componente}</td></tr>")
+                    accion_actual = accion_actual.siguiente
             segundo += 1
-        
+
         archivo_html.write("</table>")
         archivo_html.write("</body></html>")
+
+    print(f"Reporte HTML guardado en {ruta_salida_html}")

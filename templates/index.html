@@ -3,72 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <link rel="stylesheet" href="../static/index.css">
     <title>Simulador de Ensamblaje</title>
 </head>
 <body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="reportes.html">Reportes</a></li>
+            <li><a href="#">Ayuda</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Container -->
     <div class="container">
-        <header>
-            <nav>
-                <ul>
-                    <li><a href="#">Archivo</a></li>
-                    <li><a href="#">Reportes</a></li>
-                    <li><a href="#">Ayuda</a></li>
-                </ul>
-            </nav>
-        </header>
+        <!-- Panel Izquierdo -->
+        <div class="left-panel">
+            <h3>Subir archivo</h3>
+            <input type="file" id="file-upload" name="file" accept=".xml">
+            <h3>Componentes</h3>
+            <table class="component-table">
+                <thead>
+                    <tr>
+                        <th>Componente</th>
+                        <th>Cantidad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Aquí se llenará la tabla con Flask -->
+                </tbody>
+            </table>
+        </div>
 
-        <main>
-            <div class="simulation">
-                <h1>SmartWatch</h1>
-                <h3>Componentes Necesarios</h3>
-                <div class="components">
-                    <ul class="component-list">
-                        <li>Componente A</li>
-                        <li>Componente B</li>
-                        <li>Componente C</li>
-                    </ul>
-                    <ul class="component-list">
-                        <li>Componente D</li>
-                        <li>Componente E</li>
-                    </ul>
-                </div>
-                <h3>Process Bar</h3>
-                <div class="process-bar">
-                    <button>Step 1</button>
-                    <button>Step 2</button>
-                    <button>Step 3</button>
+        <!-- Panel Central -->
+        <div class="center-panel">
+            <h3>Máquina / Productos</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Máquina</th>
+                        <th>Productos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Aquí se llenará con Flask -->
+                    <tr>
+                        <td>Máquina 1</td>
+                        <td>Producto 1</td>
+                    </tr>
+                    <tr>
+                        <td>Máquina 1</td>
+                        <td>Producto 2</td>
+                    </tr>
+                    <tr>
+                        <td>Máquina 2</td>
+                        <td>Producto 1</td>
+                    </tr>
+                    <tr>
+                        <td>Máquina 2</td>
+                        <td>Producto 3</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <button class="process-btn" id="initialize-btn">Inicializar Proceso</button>
+
+            <!-- Ventana emergente para seleccionar Máquina y Producto -->
+            <div id="popup" class="popup">
+                <div class="popup-content">
+                    <span class="close">&times;</span>
+                    <h3>Seleccionar Máquina y Producto</h3>
+                    <label for="maquina">Máquina</label>
+                    <select name="maquina" id="popup-maquina">
+                        <option value="maquina1">Máquina 1</option>
+                        <option value="maquina2">Máquina 2</option>
+                    </select>
+
+                    <label for="producto">Producto</label>
+                    <select name="producto" id="popup-producto">
+                        <option value="producto1">Producto 1</option>
+                        <option value="producto2">Producto 2</option>
+                    </select>
+                    <button id="confirm-btn">Confirmar</button>
                 </div>
             </div>
+        </div>
 
-            <div class="table-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Tiempo</th>
-                            <th>Línea 1</th>
-                            <th>Línea 2</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1er seg</td>
-                            <td>Mover - C1</td>
-                            <td>MB-C1</td>
-                        </tr>
-                        <tr>
-                            <td>2do seg</td>
-                            <td>Mover C2</td>
-                            <td>No hacer nada</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div class="timer">
-                    <div class="clock-icon"></div>
-                    <span>5 Seg</span>
+        <!-- Panel Derecho -->
+        <div class="right-panel">
+            <h3>Grafo</h3>
+            <div class="grafo-box">
+                <img id="grafo-image" src="" alt="Imagen del Grafo">
+            </div>
+
+            <button class="delete-btn">Eliminar datos</button>
+
+            <h3>Pasos</h3>
+            <table class="pasos-table">
+                <thead>
+                    <tr>
+                        <th>Seq</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Aquí se llenarán los pasos con Flask -->
+                </tbody>
+            </table>
+
+            <div class="timer">
+                <h3>Tiempo</h3>
+                <div class="circle">
+                    <p id="time">5</p>
                 </div>
             </div>
-        </main>
+        </div>
+
+        <!-- Panel Inferior con Flechas -->
+        <div class="bottom-panel">
+            <div class="phase" id="phase-upload">
+                <img src="arrow.png" alt="Subida">
+                <p>Subida</p>
+            </div>
+            <div class="phase" id="phase-select">
+                <img src="arrow.png" alt="Selección">
+                <p>Selección</p>
+            </div>
+            <div class="phase" id="phase-assemble">
+                <img src="arrow.png" alt="Ensamblaje">
+                <p>Ensamblaje</p>
+            </div>
+        </div>
     </div>
+
+    <script src="scripts.js"></script>
+
 </body>
 </html>
