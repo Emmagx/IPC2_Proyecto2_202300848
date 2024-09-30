@@ -1,8 +1,0 @@
-// Proceso de Ensamblado para Laptop
-digraph {
-	1 [label=L1C1]
-	2 [label=L3C1]
-	1 -> 2
-	3 [label=L2C1]
-	2 -> 3
-}

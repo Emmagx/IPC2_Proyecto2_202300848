@@ -8,11 +8,11 @@
         <ListadoProductos>
             <Producto>
                 <nombre>SmartWatch</nombre>
-                <elaboracion>L1C2 L2C1 L2C2 L1C4</elaboracion>
+                <elaboracion>L2C2 L2C1 L2C2 L1C4</elaboracion>
             </Producto>
             <Producto>
                 <nombre>Smartphone</nombre>
-                <elaboracion>L1C2 L2C1 L2C2 L1C4</elaboracion>
+                <elaboracion>L2C2 L2C1 L2C1 L1C4</elaboracion>
             </Producto>
         </ListadoProductos>
     </Maquina>

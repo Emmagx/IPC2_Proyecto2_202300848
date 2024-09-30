@@ -33,15 +33,14 @@
                 <ElaboracionOptima>
                     <Tiempo NoSegundo="1">
                         <Linea NoLinea="1">L1C4</Linea>
-                        <Linea NoLinea="2">L2C2</Linea>
+                        <Linea NoLinea="2">L2C1</Linea>
                         </Tiempo>
                     <Tiempo NoSegundo="2">
                         <Linea NoLinea="1">L1C4</Linea>
-                        <Linea NoLinea="2">L2C2</Linea>
+                        <Linea NoLinea="2">L2C1</Linea>
                         </Tiempo>
                     <Tiempo NoSegundo="3">
                         <Linea NoLinea="1">L1C4</Linea>
-                        <Linea NoLinea="2">L2C2</Linea>
                         </Tiempo>
                     <Tiempo NoSegundo="4">
                         <Linea NoLinea="1">L1C4</Linea>
