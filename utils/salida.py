@@ -53,8 +53,8 @@ def generar_salida_xml(maquinas, ruta_salida_xml):
                     while accion_actual:
                         linea = accion_actual.valor.linea  # Accedemos a la línea
                         componente = accion_actual.valor.componente  # Accedemos al componente
-                        linea_ensamblaje_elem = ET.SubElement(tiempo_elem, "Linea", NoLinea=str(no_linea))
-                        linea_ensamblaje_elem.text = f"C{componente}"  # Solo guardamos el componente
+                        linea_ensamblaje_elem = ET.SubElement(tiempo_elem, "Linea", NoLinea=str(linea))
+                        linea_ensamblaje_elem.text = f"L{linea}C{componente}"  # Solo guardamos el componente
                         accion_actual = accion_actual.siguiente
                         no_linea += 1
 

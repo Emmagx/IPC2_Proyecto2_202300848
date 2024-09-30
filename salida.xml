@@ -8,22 +8,22 @@
                 <TiempoTotal>5</TiempoTotal>
                 <ElaboracionOptima>
                     <Tiempo NoSegundo="1">
-                        <Linea NoLinea="1">C4</Linea>
-                        <Linea NoLinea="2">C2</Linea>
+                        <Linea NoLinea="1">L1C4</Linea>
+                        <Linea NoLinea="2">L2C2</Linea>
                         </Tiempo>
                     <Tiempo NoSegundo="2">
-                        <Linea NoLinea="1">C4</Linea>
-                        <Linea NoLinea="2">C2</Linea>
+                        <Linea NoLinea="1">L1C4</Linea>
+                        <Linea NoLinea="2">L2C2</Linea>
                         </Tiempo>
                     <Tiempo NoSegundo="3">
-                        <Linea NoLinea="1">C4</Linea>
-                        <Linea NoLinea="2">C2</Linea>
+                        <Linea NoLinea="1">L1C4</Linea>
+                        <Linea NoLinea="2">L2C2</Linea>
                         </Tiempo>
                     <Tiempo NoSegundo="4">
-                        <Linea NoLinea="1">C4</Linea>
+                        <Linea NoLinea="1">L1C4</Linea>
                         </Tiempo>
                     <Tiempo NoSegundo="5">
-                        <Linea NoLinea="1">C4</Linea>
+                        <Linea NoLinea="1">L1C4</Linea>
                         </Tiempo>
                     </ElaboracionOptima>
                 </Producto>
@@ -32,22 +32,22 @@
                 <TiempoTotal>5</TiempoTotal>
                 <ElaboracionOptima>
                     <Tiempo NoSegundo="1">
-                        <Linea NoLinea="1">C4</Linea>
-                        <Linea NoLinea="2">C2</Linea>
+                        <Linea NoLinea="1">L1C4</Linea>
+                        <Linea NoLinea="2">L2C2</Linea>
                         </Tiempo>
                     <Tiempo NoSegundo="2">
-                        <Linea NoLinea="1">C4</Linea>
-                        <Linea NoLinea="2">C2</Linea>
+                        <Linea NoLinea="1">L1C4</Linea>
+                        <Linea NoLinea="2">L2C2</Linea>
                         </Tiempo>
                     <Tiempo NoSegundo="3">
-                        <Linea NoLinea="1">C4</Linea>
-                        <Linea NoLinea="2">C2</Linea>
+                        <Linea NoLinea="1">L1C4</Linea>
+                        <Linea NoLinea="2">L2C2</Linea>
                         </Tiempo>
                     <Tiempo NoSegundo="4">
-                        <Linea NoLinea="1">C4</Linea>
+                        <Linea NoLinea="1">L1C4</Linea>
                         </Tiempo>
                     <Tiempo NoSegundo="5">
-                        <Linea NoLinea="1">C4</Linea>
+                        <Linea NoLinea="1">L1C4</Linea>
                         </Tiempo>
                     </ElaboracionOptima>
                 </Producto>
@@ -61,20 +61,20 @@
                 <TiempoTotal>7</TiempoTotal>
                 <ElaboracionOptima>
                     <Tiempo NoSegundo="1">
-                        <Linea NoLinea="1">C1</Linea>
-                        <Linea NoLinea="2">C1</Linea>
-                        <Linea NoLinea="3">C1</Linea>
+                        <Linea NoLinea="1">L1C1</Linea>
+                        <Linea NoLinea="2">L2C1</Linea>
+                        <Linea NoLinea="3">L3C1</Linea>
                         </Tiempo>
                     <Tiempo NoSegundo="2">
-                        <Linea NoLinea="1">C1</Linea>
+                        <Linea NoLinea="1">L1C1</Linea>
                         </Tiempo>
                     <Tiempo NoSegundo="3" />
                     <Tiempo NoSegundo="4">
-                        <Linea NoLinea="1">C1</Linea>
+                        <Linea NoLinea="2">L2C1</Linea>
                         </Tiempo>
                     <Tiempo NoSegundo="5" />
                     <Tiempo NoSegundo="6">
-                        <Linea NoLinea="1">C1</Linea>
+                        <Linea NoLinea="3">L3C1</Linea>
                         </Tiempo>
                     </ElaboracionOptima>
                 </Producto>
