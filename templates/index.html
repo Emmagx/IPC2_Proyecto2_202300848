@@ -7,98 +7,92 @@
     <title>Simulador de Ensamblaje</title>
 </head>
 <body>
-
-    <!-- Navbar -->
     <nav class="navbar">
         <ul>
-            <li><a href="index.html">Inicio</a></li>
+            <li><a href="/">Inicio</a></li>
             <li><a href="reportes.html">Reportes</a></li>
             <li><a href="#">Ayuda</a></li>
         </ul>
     </nav>
-
-    <!-- Main Container -->
     <div class="container">
-        <!-- Panel Izquierdo -->
         <div class="left-panel">
             <h3>Subir archivo</h3>
-            <input type="file" id="file-upload" name="file" accept=".xml">
+            <form action="/" method="POST" enctype="multipart/form-data">
+                <input type="file" id="file-upload" name="file" accept=".xml" required>
+                <button type="submit" class="upload-btn">Subir Archivo</button>
+            </form>
             <h3>Componentes</h3>
-            <table class="component-table">
-                <thead>
-                    <tr>
-                        <th>Componente</th>
-                        <th>Cantidad</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Aquí se llenará la tabla con Flask -->
-                </tbody>
-            </table>
+            <ul>
+                {% if componentes %}
+                    {% for componente in componentes %}
+                    <li>{{ componente }}</li>
+                    {% endfor %}
+                {% else %}
+                    <li>No hay componentes disponibles.</li>
+                {% endif %}
+            </ul>
         </div>
 
-        <!-- Panel Central -->
         <div class="center-panel">
             <h3>Máquina / Productos</h3>
             <table>
                 <thead>
                     <tr>
                         <th>Máquina</th>
-                        <th>Productos</th>
+                        <th>Producto</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- Aquí se llenará con Flask -->
-                    <tr>
-                        <td>Máquina 1</td>
-                        <td>Producto 1</td>
-                    </tr>
-                    <tr>
-                        <td>Máquina 1</td>
-                        <td>Producto 2</td>
-                    </tr>
-                    <tr>
-                        <td>Máquina 2</td>
-                        <td>Producto 1</td>
-                    </tr>
-                    <tr>
-                        <td>Máquina 2</td>
-                        <td>Producto 3</td>
-                    </tr>
+                    {% if datos %}
+                        {% for fila in datos %}
+                        <tr>
+                            <td>{{ fila.maquina }}</td>
+                            <td>{{ fila.producto }}</td>
+                        </tr>
+                        {% endfor %}
+                    {% else %}
+                        <tr>
+                            <td colspan="2">No hay datos disponibles.</td>
+                        </tr>
+                    {% endif %}
                 </tbody>
             </table>
 
-            <button class="process-btn" id="initialize-btn">Inicializar Proceso</button>
-
-            <!-- Ventana emergente para seleccionar Máquina y Producto -->
-            <div id="popup" class="popup">
-                <div class="popup-content">
-                    <span class="close">&times;</span>
-                    <h3>Seleccionar Máquina y Producto</h3>
-                    <label for="maquina">Máquina</label>
-                    <select name="maquina" id="popup-maquina">
-                        <option value="maquina1">Máquina 1</option>
-                        <option value="maquina2">Máquina 2</option>
-                    </select>
-
-                    <label for="producto">Producto</label>
-                    <select name="producto" id="popup-producto">
-                        <option value="producto1">Producto 1</option>
-                        <option value="producto2">Producto 2</option>
-                    </select>
-                    <button id="confirm-btn">Confirmar</button>
-                </div>
+            <div class="popup-content">
+                <h3>Seleccionar Máquina y Producto</h3>
+        
+                <!-- Select para las máquinas -->
+                <label for="maquina">Máquina</label>
+                <select name="maquina" id="popup-maquina">
+                    {% if maquinas %}
+                        {% for maquina in maquinas %}
+                            <option value="{{ maquina }}">{{ maquina }}</option>
+                        {% endfor %}
+                    {% else %}
+                        <option>No hay máquinas disponibles.</option>
+                    {% endif %}
+                </select>
+        
+                <!-- Select para los productos -->
+                <label for="producto">Producto</label>
+                <select name="producto" id="popup-producto">
+                    {% if producto %}
+                        {% for prod in producto %}
+                            <option value="{{ prod }}">{{ prod }}</option>
+                        {% endfor %}
+                    {% else %}
+                        <option>No hay productos disponibles.</option>
+                    {% endif %}
+                </select>
             </div>
+            <button class="process-btn" id="initialize-btn">Inicializar Proceso</button>
         </div>
 
-        <!-- Panel Derecho -->
         <div class="right-panel">
             <h3>Grafo</h3>
             <div class="grafo-box">
-                <img id="grafo-image" src="" alt="Imagen del Grafo">
+                <img id="grafo-image" src="" alt="">
             </div>
-
-            <button class="delete-btn">Eliminar datos</button>
 
             <h3>Pasos</h3>
             <table class="pasos-table">
@@ -109,7 +103,6 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- Aquí se llenarán los pasos con Flask -->
                 </tbody>
             </table>
 
@@ -121,7 +114,6 @@
             </div>
         </div>
 
-        <!-- Panel Inferior con Flechas -->
         <div class="bottom-panel">
             <div class="phase" id="phase-upload">
                 <img src="arrow.png" alt="Subida">
@@ -137,8 +129,5 @@
             </div>
         </div>
     </div>
-
-    <script src="scripts.js"></script>
-
 </body>
 </html>

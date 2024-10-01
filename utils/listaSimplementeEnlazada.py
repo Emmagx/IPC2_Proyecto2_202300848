@@ -31,6 +31,9 @@ class ListaSimpleEnlazada:
             anterior.siguiente = actual.siguiente
         return True
     
+    def vaciar(self):
+        self.cabeza = None
+    
     def mostrar(self):
         actual = self.cabeza
         while actual:
@@ -74,4 +77,12 @@ class ListaSimpleEnlazada:
                 return True
             actual = actual.siguiente
             contador += 1
+        return False
+    
+    def contiene(self, valor):
+        actual = self.cabeza
+        while actual:
+            if actual.valor == valor:
+                return True
+            actual = actual.siguiente
         return False

@@ -72,15 +72,19 @@ h3 {
 
 /* Center Panel */
 .center-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: #f9f9f9;
     padding: 20px;
     border-radius: 8px;
 }
 
 .center-panel table {
-    width: 100%;
+    width: 80%;  /* Ajuste de tamaño para no ocupar el 100% */
     border-collapse: collapse;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .center-panel th, 
@@ -89,12 +93,16 @@ h3 {
     padding: 10px;
 }
 
+/* Centrado del botón de Proceso */
 .process-btn {
     background-color: #2196F3;
     color: white;
     padding: 10px 20px;
     border: none;
     cursor: pointer;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
 }
 
 /* Popup */
@@ -165,12 +173,18 @@ h3 {
     justify-content: center;
     margin: 0 auto;
 }
+.delete-btn {
+    background-color: #ffffff;
+    height: fit-content;
+    width: fit-content;
+    text-decoration: double;
+}
 
 /* Bottom Panel */
 .bottom-panel {
     grid-column: 1 / span 3;
     display: flex;
-    justify-content: space-around;
+    align-items: center;
     padding: 20px;
 }
 
@@ -186,4 +200,22 @@ h3 {
 .phase.complete img {
     background-color: green;
     opacity: 0.8;
+}
+select {
+    /* Reset */
+    appearance: none;
+    border: 0;
+    outline: 0;
+    height: fit-content;
+    width: fit-content;
+    font: inherit;
+    /* Personalize */
+    /* width: 20rem; */
+    padding: 1rem 1rem 1rem 1rem;
+    background: var(--arrow-icon) no-repeat right 0.8em center / 1.4em,
+      linear-gradient(to left, var(--arrow-bg) 3em, var(--select-bg) 3em);
+    color: rgb(11, 7, 7);
+    border-radius: 0.25em;
+    box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
 }
