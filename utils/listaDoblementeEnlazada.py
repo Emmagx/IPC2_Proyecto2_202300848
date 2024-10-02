@@ -61,3 +61,14 @@ class ListaDobleEnlazada:
                 return True
             actual = actual.siguiente
         return False
+    
+    def to_json(self):
+        resultado = "["
+        actual = self.cabeza
+        while actual:
+            resultado += f'"{actual.valor}"'
+            actual = actual.siguiente
+            if actual:
+                resultado += ", "
+        resultado += "]"
+        return resultado

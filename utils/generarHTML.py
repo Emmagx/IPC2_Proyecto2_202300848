@@ -1,12 +1,7 @@
 def generar_reporte_html(maquina, producto, ruta_salida_html):
     with open(ruta_salida_html, "w", encoding="utf-8") as archivo_html:
-        archivo_html.write("<html><head><title>Reporte Simulación</title></head><body>")
-        archivo_html.write(f"<h1>Reporte de Simulación para {producto.nombre}</h1>")
-        archivo_html.write(f"<p>Máquina: {maquina.nombre}</p>")
-        archivo_html.write(f"<p>Tiempo total de ensamblaje: {producto.tiempo_total_ensamblaje} segundos</p>")
-        
+        archivo_html.write("<html><body>")
         archivo_html.write("<table border='1'><tr><th>Segundo</th><th>Línea</th><th>Componente</th></tr>")
-
         segundo = 1
         while segundo <= producto.historial_ensamblaje.segundos.longitud():
             acciones = producto.historial_ensamblaje.obtener_acciones_por_segundo(segundo)
@@ -23,3 +18,4 @@ def generar_reporte_html(maquina, producto, ruta_salida_html):
         archivo_html.write("</body></html>")
 
     print(f"Reporte HTML guardado en {ruta_salida_html}")
+    return segundo

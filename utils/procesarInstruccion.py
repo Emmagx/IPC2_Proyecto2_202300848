@@ -72,18 +72,21 @@ def simular_proceso_creacion(maquina, producto):
     producto.tiempo_total_ensamblaje = tiempo_total
     print(f"Producto {producto.nombre} ensamblado en {tiempo_total} segundos.\n")
 
-    ruta_reporte_html = f"reporte_{producto.nombre}.html"
-    ruta_grafo = f"grafo_{producto.nombre}"
+    ruta_reporte_html = f"static/reporte_{producto.nombre}.html"
+    ruta_grafo = f"static/grafo_{producto.nombre}"
+    
+    
     
     # Generar el reporte HTML
-    generar_reporte_html(maquina, producto, ruta_reporte_html)
+    tiempo = generar_reporte_html(maquina, producto, ruta_reporte_html)
     
     # Generar el gráfico de ensamblaje
     generar_grafo_ensamblaje(producto, ruta_grafo)
 
     print(f"Reporte HTML generado: {ruta_reporte_html}")
-    print(f"Grafo de ensamblaje generado: {ruta_grafo}.png")
-    return ruta_grafo, ruta_reporte_html
+    print(f"Grafo de ensamblaje generado: {ruta_grafo}")
+    ruta_grafo = f"{ruta_grafo}.png"
+    return ruta_grafo, ruta_reporte_html, tiempo
     
 def ejecutar_simulacion(ruta_archivo_xml, ruta_salida_xml):
     maquinas = analizarArchivo(ruta_archivo_xml)

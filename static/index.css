@@ -135,6 +135,9 @@ h3 {
     background-color: #e0e0e0;
     padding: 20px;
     border-radius: 8px;
+    align-items: center;
+    align-content: center;
+    
 }
 
 .grafo-box {
@@ -218,4 +221,7 @@ select {
     border-radius: 0.25em;
     box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
     cursor: pointer;
+}
+.grafo-box {
+    display: flex;
 }
