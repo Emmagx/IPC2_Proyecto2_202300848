@@ -123,7 +123,7 @@ def simulate():
         return render_template(
             'index.html',
             datos=tabla_datos,
-            componentes=componentes_lista,
+            componentes=None,
             maquinas=nombres_maquinas,
             producto=nombres_productos,
             grafo_image=grafo_path,

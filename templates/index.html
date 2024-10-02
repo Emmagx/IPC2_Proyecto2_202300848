@@ -24,49 +24,49 @@
             <h3>Componentes</h3>
             <ul id="componentes-list">
                 {% if componentes %}
-                    {% for componente in componentes %}
-                        <li>{{ componente }}</li>
-                    {% endfor %}
+                {% for componente in componentes %}
+                <li>{{ componente }}</li>
+                {% endfor %}
                 {% else %}
-                    <li>No hay componentes disponibles.</li> <!-- Este será el valor por defecto -->
+                <li>No hay componentes disponibles.</li>
                 {% endif %}
             </ul>
             
             
-                <script>
-                    function loadComponents(maquina) {
-                        fetch(`/get_components/${maquina}`)
-                        .then(response => {
-                            if (!response.ok) {
-                                throw new Error('Error en la red');
-                            }
-                            return response.json();
-                        })
-                        .then(data => {
-                            let componentesList = document.getElementById("componentes-list");
-                            componentesList.innerHTML = ""; // Limpiar la lista de componentes actual
-
-                            if (Array.isArray(data) && data.length > 0) { // Ensure data is an array
-                                data.forEach(componente => {
-                                    let li = document.createElement("li"); // Ajustado aquí
-                                    li.textContent = componente;
-                                    componentesList.appendChild(li);
-                                });
-                            } else {
-                                let li = document.createElement("li");
-                                li.textContent = "No hay componentes disponibles.";
+            <script>
+                function loadComponents(maquina) {
+                    fetch(`/get_components/${maquina}`)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Error en la red');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        let componentesList = document.getElementById("componentes-list");
+                        componentesList.innerHTML = ""; // Limpiar la lista de componentes actual
+                        
+                        if (Array.isArray(data) && data.length > 0) { // Ensure data is an array
+                            data.forEach(componente => {
+                                let li = document.createElement("li"); // Ajustado aquí
+                                li.textContent = componente;
                                 componentesList.appendChild(li);
-                            }
-                        })
-                        .catch(error => {
-                            console.error("Error al cargar componentes:", error);
-                        });
-                    }
-
-                </script>
+                            });
+                        } else {
+                            let li = document.createElement("li");
+                            li.textContent = "No hay componentes disponibles.";
+                            componentesList.appendChild(li);
+                        }
+                    })
+                    .catch(error => {
+                        console.error("Error al cargar componentes:", error);
+                    });
+                }
                 
+            </script>
+            
         </div>
-
+        
         <div class="center-panel">
             <h3>Máquina / Productos</h3>
             <table>
@@ -78,57 +78,62 @@
                 </thead>
                 <tbody>
                     {% if datos %}
-                        {% for fila in datos %}
-                        <tr>
-                            <td>{{ fila.maquina }}</td>
-                            <td>{{ fila.producto }}</td>
-                        </tr>
-                        {% endfor %}
+                    {% for fila in datos %}
+                    <tr>
+                        <td>{{ fila.maquina }}</td>
+                        <td>{{ fila.producto }}</td>
+                    </tr>
+                    {% endfor %}
                     {% else %}
-                        <tr>
-                            <td colspan="2">No hay datos disponibles.</td>
-                        </tr>
+                    <tr>
+                        <td colspan="2">No hay datos disponibles.</td>
+                    </tr>
                     {% endif %}
                 </tbody>
             </table>
-
+            
             <form action="/simulate" method="POST" enctype="multipart/form-data">
                 <label for="maquina">Máquina</label>
                 <select name="maquina" id="popup-maquina" onchange="loadComponents(this.value)" required>
                     {% if maquinas %}
-                        {% for maquina in maquinas %}
-                            <option value="{{ maquina }}">{{ maquina }}</option>
-                        {% endfor %}
+                    {% for maquina in maquinas %}
+                    <option value="{{ maquina }}">{{ maquina }}</option>
+                    {% endfor %}
                     {% else %}
-                        <option>No hay máquinas disponibles.</option>
+                    <option>No hay máquinas disponibles.</option>
                     {% endif %}
                 </select>
-            
+                
                 <!-- Select para los productos -->
                 <label for="producto">Producto</label>
                 <select name="producto" id="popup-producto" required>
                     {% if producto %}
-                        {% for prod in producto %}
-                            <option value="{{ prod }}">{{ prod }}</option>
-                        {% endfor %}
+                    {% for prod in producto %}
+                    <option value="{{ prod }}">{{ prod }}</option>
+                    {% endfor %}
                     {% else %}
-                        <option>No hay productos disponibles.</option>
+                    <option>No hay productos disponibles.</option>
                     {% endif %}
                 </select>
-            
-                <!-- Botón para inicializar la simulación -->
                 <button class="process-btn" id="initialize-btn">Inicializar Proceso</button>
             </form>
+            <div class="bottom-panel">
+                <div class="bottom-panel">
+                    <div class="progress-container">
+                        <div class="progress-bar" id="progress-bar"></div>
+                    </div>
+                </div>
+            </div>
         </div>
-
+        
         <div class="right-panel">
             <h3>Grafo</h3>
             <div class="grafo-box">
                 <img id="grafo-image" src="../{{grafo_image}}" alt="Grafo" />
             </div>
-        
+            
             <h3>Pasos</h3>
-            <iframe src="../{{report_html}}" width="100%" height="300" frameborder="0"></iframe>
+            <iframe class="iframe" src="../{{report_html}}" width="100%" height="250" frameborder="0"></iframe>
             <div class="timer">
                 <h3>Tiempo Optimo</h3>
                 <div class="circle">
@@ -137,20 +142,5 @@
             </div>
         </div>
 
-        <div class="bottom-panel">
-            <div class="phase" id="phase-upload">
-                <img src="arrow.png" alt="Subida">
-                <p>Subida</p>
-            </div>
-            <div class="phase" id="phase-select">
-                <img src="arrow.png" alt="Selección">
-                <p>Selección</p>
-            </div>
-            <div class="phase" id="phase-assemble">
-                <img src="arrow.png" alt="Ensamblaje">
-                <p>Ensamblaje</p>
-            </div>
-        </div>
-    </div>
 </body>
 </html>
