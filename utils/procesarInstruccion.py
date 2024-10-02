@@ -46,17 +46,17 @@ def simular_proceso_creacion(maquina, producto):
                 if not ensamblando:
                     if posicion_brazo < componente:
                         movimientos_brazos.actualizar_por_posicion(linea, posicion_brazo + 1)
-                        producto.historial_ensamblaje.agregar_accion(tiempo_total, linea + 1, componente)
+                        producto.historial_ensamblaje.agregar_accion(tiempo_total, linea + 1, f"moviendo brazo hacia el componente {componente}")
                         print(f"Línea {linea + 1} moviendo brazo hacia el componente {componente}. Ahora en posición {posicion_brazo + 1}")
                     elif posicion_brazo > componente:
                         movimientos_brazos.actualizar_por_posicion(linea, posicion_brazo - 1)
-                        producto.historial_ensamblaje.agregar_accion(tiempo_total, linea + 1, componente)
+                        producto.historial_ensamblaje.agregar_accion(tiempo_total, linea + 1,  f"moviendo brazo hacia el componente {componente}")
                         print(f"Línea {linea + 1} moviendo brazo hacia el componente {componente}. Ahora en posición {posicion_brazo - 1}")
                     elif posicion_brazo == componente:
                         ensamblando = True
                         ensamblando_linea = linea
 
-                        producto.historial_ensamblaje.agregar_accion(tiempo_total, linea + 1, componente)
+                        producto.historial_ensamblaje.agregar_accion(tiempo_total, linea + 1, f"Ensamblando {componente}")
                         for t in range(1, maquina.tiempo_ensamblaje):
                             
                             print(f"Línea {linea + 1} ensamblando componente {componente}")
