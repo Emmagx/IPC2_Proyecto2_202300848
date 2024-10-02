@@ -96,8 +96,9 @@
                 <label for="maquina">Máquina</label>
                 <select name="maquina" id="popup-maquina" onchange="loadComponents(this.value)" required>
                     {% if maquinas %}
+                    <option> Seleccion</option>
                     {% for maquina in maquinas %}
-                    <option value="{{ maquina }}">{{ maquina }}</option>
+                    <option value="{{maquina}}">{{ maquina }}</option>
                     {% endfor %}
                     {% else %}
                     <option>No hay máquinas disponibles.</option>
@@ -108,8 +109,10 @@
                 <label for="producto">Producto</label>
                 <select name="producto" id="popup-producto" required>
                     {% if producto %}
+                    <option> Seleccion</option>                 
                     {% for prod in producto %}
-                    <option value="{{ prod }}">{{ prod }}</option>
+
+                    <option value="{{prod}}">{{ prod }}</option>
                     {% endfor %}
                     {% else %}
                     <option>No hay productos disponibles.</option>
@@ -120,8 +123,13 @@
             <div class="bottom-panel">
                 <div class="bottom-panel">
                     <div class="progress-container">
-                        <div class="progress-bar" id="progress-bar"></div>
-                    </div>
+                        <div class="circle-progress" id="progress-circle">
+                          <div class="circle-content">
+                            <span id="progress-percent">25%</span>
+                          </div>
+                        </div>
+                      </div>
+                      
                 </div>
             </div>
         </div>

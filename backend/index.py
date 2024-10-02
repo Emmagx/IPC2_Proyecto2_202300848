@@ -35,7 +35,6 @@ def upload_file():
             global maquinas
             maquinas = analizarArchivo(upload_path)
 
-            # Limpiar listas
             componentes_lista.vaciar()
             maquinas_lista.vaciar()
             productos.vaciar()
@@ -45,34 +44,28 @@ def upload_file():
             while actual_maquina:
                 maquina = actual_maquina.valor
                 
-                # Guardar la máquina completa en la lista de máquinas
                 if not maquinas_lista.contiene(maquina):
                     maquinas_lista.insertar(maquina)
 
-                # Procesar los componentes
                 for i in range(maquina.componentes.longitud()):
                     componente = f"Componente {i + 1}"
                     componentes_lista.insertar(componente)
 
-                # Procesar productos
                 actual_producto = maquina.productos.cabeza
                 while actual_producto:
                     producto = actual_producto.valor
                     
-                    # Guardar el producto completo en la lista de productos
                     if not productos.contiene(producto):
                         productos.insertar(producto)
 
-                    # Insertar fila en la tabla
                     fila = FilaTabla(maquina.nombre, producto.nombre)
                     tabla_datos.insertar(fila)
 
                     actual_producto = actual_producto.siguiente
                 actual_maquina = actual_maquina.siguiente
 
-            # Extraer los nombres de las máquinas y productos para los comboboxes
-            nombres_maquinas = maquinas_lista.obtener_nombres()  # Usar el nuevo método
-            nombres_productos = productos.obtener_nombres()  # Usar el nuevo método
+            nombres_maquinas = maquinas_lista.obtener_nombres()
+            nombres_productos = productos.obtener_nombres()
             
             return render_template('index.html', datos=tabla_datos, componentes=None, maquinas=nombres_maquinas, producto=nombres_productos, report_html = None)
 
@@ -87,36 +80,26 @@ def simulate():
     maquina = None
     producto_encontrado = None
 
-    # Buscar la máquina seleccionada por nombre en la lista de objetos Maquina
     while actual_maquina:
         maquina_actual = actual_maquina.valor
         if isinstance(maquina_actual, Maquina):
-            if maquina_actual.nombre == maquina_nombre:  # Comparar por nombre
+            if maquina_actual.nombre == maquina_nombre:
                 maquina = maquina_actual
                 
-                # Buscar el producto dentro de la máquina seleccionada
                 actual_producto = maquina.productos.cabeza
                 while actual_producto:
                     producto_actual = actual_producto.valor
                     if isinstance(producto_actual, Producto):
-                        if producto_actual.nombre == producto_nombre:  # Comparar por nombre
-                            producto_encontrado = producto_actual
+                        if producto_actual.nombre == producto_nombre:
+                            producto_encontrado = producto_actual  # Asignamos el producto encontrado
                             break
                     actual_producto = actual_producto.siguiente
                 break
         actual_maquina = actual_maquina.siguiente
 
-    # Verificar que se encontró la máquina y el producto
-    if maquina and producto_encontrado:
-        # Simular el proceso de creación
+    if maquina and producto_encontrado:  # Ahora sí se evalúa correctamente
         grafo_path, pasos, time = simular_proceso_creacion(maquina, producto_encontrado)
 
-        # Guardar el HTML de pasos
-        report_html_path = f"/static/reporte_{producto_encontrado.nombre}.html"
-        # with open(report_html_path, 'w') as file:
-        #     file.write(pasos)
-
-        # Preparar datos para renderizar
         nombres_maquinas = maquinas_lista.obtener_nombres()
         nombres_productos = productos.obtener_nombres()
 
@@ -133,9 +116,9 @@ def simulate():
     else:
         return "Error en la simulación: Máquina o Producto no encontrados."
 
+
 @app.route('/get_components/<maquina_nombre>', methods=['GET'])
 def get_components(maquina_nombre):
-    # Buscar la máquina en la lista
     actual_maquina = maquinas_lista.cabeza
     componentes = ListaSimpleEnlazada()
 
@@ -149,7 +132,6 @@ def get_components(maquina_nombre):
             break
         actual_maquina = actual_maquina.siguiente
 
-    # Devuelve el JSON manualmente generado
     return componentes.to_json()
 
 
