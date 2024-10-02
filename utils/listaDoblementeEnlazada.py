@@ -42,3 +42,33 @@ class ListaDobleEnlazada:
                 actual = actual.siguiente
                 contador += 1
             return None
+        
+    def __len__(self):
+        contador = 0
+        actual = self.cabeza
+        while actual:
+            contador += 1
+            actual = actual.siguiente
+        return contador
+
+    def longitud(self):
+        return self.__len__()
+    
+    def contiene(self, valor):
+        actual = self.cabeza
+        while actual:
+            if actual.valor == valor:
+                return True
+            actual = actual.siguiente
+        return False
+    
+    def to_json(self):
+        resultado = "["
+        actual = self.cabeza
+        while actual:
+            resultado += f'"{actual.valor}"'
+            actual = actual.siguiente
+            if actual:
+                resultado += ", "
+        resultado += "]"
+        return resultado

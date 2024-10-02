@@ -1,0 +1,244 @@
+/* General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #300061;
+}
+
+h3 {
+    margin-bottom: 10px;
+}
+
+.navbar {
+    background-color: #000000;
+    padding: 10px;
+    text-align: center;
+}
+
+.navbar ul {
+    list-style-type: none;
+}
+
+.navbar ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.navbar ul li a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-gap: 20px;
+    padding: 20px;
+}
+
+/* Left Panel */
+.left-panel {
+    background-color: #e0e0e0;
+    padding: 20px;
+    border-radius: 10px;
+    height: fit-content;
+    display: grid;
+}
+
+.left-panel input[type="file"] {
+    margin-bottom: 20px;
+}
+
+.component-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.component-table th, 
+.component-table td {
+    border: 1px solid #333;
+    padding: 8px;
+}
+
+/* Center Panel */
+.center-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #e0e0e0;
+    padding: 20px;
+    border-radius: 8px;
+    height: fit-content;
+}
+
+.center-panel table {
+    width: 50%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.center-panel th, 
+.center-panel td {
+    border: 1px solid #333;
+    padding: 10px;
+}
+
+/* Centrado del botón de Proceso */
+.process-btn {
+    background-color: #2196F3;
+    color: white;
+    padding: 10px 20px;   
+    border-radius:10px;
+    cursor: pointer;
+    margin:  auto;
+    margin-top: 20px;
+    display: flex;
+    margin-bottom: 0px;
+    text-align: center;
+}
+
+/* Popup */
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.popup-content {
+    text-align: center;
+}
+
+.popup select {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+}
+
+/* Right Panel */
+.right-panel {
+    background-color: #e0e0e0;
+    padding: 20px;
+    display: grid;
+    height: fit-content;
+    border-radius: 8px;
+    align-items: center;
+    align-content: center;
+    
+}
+
+.grafo-box {
+    width: 100%;
+    height: 150px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+.pasos-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.pasos-table th, 
+.pasos-table td {
+    border: 10px solid #0c00ed;
+    padding: 8px;
+}
+
+.timer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.timer .circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #d89eb0;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+.delete-btn {
+    background-color: #ffffff;
+    height: fit-content;
+    width: fit-content;
+    text-decoration: double;
+}
+
+/* Bottom Panel */
+.bottom-panel {
+    grid-column: 1 / span 3;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+select {
+    appearance: none;
+    border: 0;
+    outline: 0;
+    height: fit-content;
+    width: fit-content;
+    font: inherit;
+    padding: 1rem 1rem 1rem 1rem;
+    background: var(--arrow-icon) no-repeat right 0.8em center / 1.4em,
+      linear-gradient(to left, var(--arrow-bg) 3em, var(--select-bg) 3em);
+    color: rgb(11, 7, 7);
+    border-radius: 0.25em;
+    box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+.grafo-box {
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+    width: 100%;
+    height: 150px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    overflow: hidden; 
+}
+
+.grafo-box img {
+    max-width: 100%; 
+    max-height: 100%; 
+    object-fit: contain; }
+
+.progress-container {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    margin-top: 20px;
+    height: 30px;
+}
+.progress-bar {
+    height: 100%;
+    width: 0;
+    background-color: #4caf50;
+    border-radius: 10px;
+    transition: width 0.5s ease;
+}

@@ -31,6 +31,9 @@ class ListaSimpleEnlazada:
             anterior.siguiente = actual.siguiente
         return True
     
+    def vaciar(self):
+        self.cabeza = None
+    
     def mostrar(self):
         actual = self.cabeza
         while actual:
@@ -52,6 +55,9 @@ class ListaSimpleEnlazada:
             actual = actual.siguiente
         return contador
 
+    def longitud(self):
+        return self.__len__()
+
     def obtener_por_posicion(self, posicion):
         actual = self.cabeza
         contador = 0
@@ -71,4 +77,32 @@ class ListaSimpleEnlazada:
                 return True
             actual = actual.siguiente
             contador += 1
-        return False 
+        return False
+    
+    def contiene(self, valor):
+        actual = self.cabeza
+        while actual:
+            if actual.valor == valor:
+                return True
+            actual = actual.siguiente
+        return False
+    
+    def obtener_nombres(self):
+            nombres = ListaSimpleEnlazada()
+            actual = self.cabeza
+            while actual:
+                if hasattr(actual.valor, 'nombre'):
+                    nombres.insertar(actual.valor.nombre) 
+                actual = actual.siguiente
+            return nombres
+    
+    def to_json(self):
+        resultado = "["
+        actual = self.cabeza
+        while actual:
+            resultado += f'"{actual.valor}"'
+            actual = actual.siguiente
+            if actual:
+                resultado += ", "
+        resultado += "]"
+        return resultado

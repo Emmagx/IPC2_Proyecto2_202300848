@@ -9,7 +9,7 @@ def analizarArchivo(ruta):
 
     for index, maquina in enumerate(maquinas):
         for j in range(1, maquina.cantidad_componentes + 1):
-            nombre_componente = f"componente{index + 1}_{j}"
+            nombre_componente = f"componente {j}"
             maquina.componentes.insertar(nombre_componente) 
             print(f"   Componente agregado a la Máquina {index + 1}: {nombre_componente}")
 
