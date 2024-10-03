@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 import os
+import glob
 from utils.listaSimplementeEnlazada import ListaSimpleEnlazada
 from utils.analizador import analizarArchivo
 from utils.procesarInstruccion import simular_proceso_creacion
@@ -20,6 +21,24 @@ maquinas = ListaSimpleEnlazada()
 
 @app.route('/', methods=['POST', 'GET'])
 def upload_file():
+    ruta_static = os.path.join(app.static_folder)
+    archivos_png = glob.glob(os.path.join(ruta_static, "*.png"))
+    archivos_html = glob.glob(os.path.join(ruta_static, "*.html"))
+
+    for archivo in archivos_png:
+        try:
+            os.remove(archivo)
+            print(f"Archivo eliminado: {archivo}")
+        except Exception as e:
+            print(f"No se pudo eliminar el archivo {archivo}: {e}")
+
+    for archivo in archivos_html:
+        try:
+            os.remove(archivo)
+            print(f"Archivo eliminado: {archivo}")
+        except Exception as e:
+            print(f"No se pudo eliminar el archivo {archivo}: {e}")
+                
     if request.method == 'POST':
         if 'file' not in request.files:
             return "No se ha seleccionado ningún archivo."

@@ -49,7 +49,7 @@ def simular_proceso_creacion(maquina, producto):
     while any(instrucciones_por_linea.obtener_por_posicion(i) is not None or instrucciones_pendientes.tiene_instrucciones_pendientes(i) for i in range(maquina.cantidad_lineas)):
         if tiempo_total==0:
             tiempo_total =+ 1
-        if contador >= maquina.cantidad_lineas:
+        if contador > 0:
             tiempo_total += 1
             contador = 0
         print(f"\n{tiempo_total}er segundo:")
@@ -86,20 +86,24 @@ def simular_proceso_creacion(maquina, producto):
 
             # Si el brazo no está en la posición correcta, mover el brazo
             if posicion_brazo < componente:
+                print("posicion < componente")
                 movimientos_brazos.actualizar_por_posicion(linea, posicion_brazo + 1)
                 producto.historial_ensamblaje.agregar_accion(tiempo_total, linea + 1, f"Moviendo brazo hacia el componente {componente + 1}")
                 print(f"Línea {linea + 1} moviendo brazo hacia el componente {componente}. Ahora en posición {posicion_brazo + 1}")
                 contador +=1
             elif posicion_brazo > componente:
+                print("posicion > componente")
                 movimientos_brazos.actualizar_por_posicion(linea, posicion_brazo - 1)
                 producto.historial_ensamblaje.agregar_accion(tiempo_total, linea + 1, f"Moviendo brazo hacia el componente {componente + 1}")
                 print(f"Línea {linea + 1} moviendo brazo hacia el componente {componente}. Ahora en posición {posicion_brazo - 1}")
                 contador +=1
             else:
+                print("posicion == componente")
                 tiempo_total += maquina.tiempo_ensamblaje
                 producto.historial_ensamblaje.agregar_accion(tiempo_total , linea + 1, f"Ensamblando componente {componente + 1}")    
                 tiempos_ensamblaje.actualizar_por_posicion(linea, maquina.tiempo_ensamblaje)
                 contador = 0
+                print(f"segundos {tiempo_total}")
                 print(f"Línea {linea + 1} comenzando ensamblaje del componente {componente + 1}")
     producto.tiempo_total_ensamblaje = tiempo_total
     print(f"Producto {producto.nombre} ensamblado en {tiempo_total} segundos.\n")

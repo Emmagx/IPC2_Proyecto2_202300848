@@ -11,7 +11,7 @@ def eliminar_imagenes():
     # Eliminar archivos .png
     for archivo in archivos_png:
         try:
-            os.remove(archivo)
+            os.remove(f"static/{archivo}")
             print(f"Archivo eliminado: {archivo}")
         except Exception as e:
             print(f"No se pudo eliminar el archivo {archivo}: {e}")
