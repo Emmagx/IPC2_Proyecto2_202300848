@@ -1,6 +1,6 @@
 // Proceso de Ensamblado para SmartWatch
 digraph {
-	1 [label=L2C2]
+	1 [label=L1C2]
 	2 [label=L2C1]
 	1 -> 2
 	3 [label=L2C2]

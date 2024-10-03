@@ -45,14 +45,20 @@ def simular_proceso_creacion(maquina, producto):
             instrucciones_por_linea.actualizar_por_posicion(linea, (linea, componente))
 
     # Mientras haya instrucciones pendientes o en progreso
+    contador = 0
     while any(instrucciones_por_linea.obtener_por_posicion(i) is not None or instrucciones_pendientes.tiene_instrucciones_pendientes(i) for i in range(maquina.cantidad_lineas)):
-        tiempo_total += 1
+        if tiempo_total==0:
+            tiempo_total =+ 1
+        if contador >= maquina.cantidad_lineas:
+            tiempo_total += 1
+            contador = 0
         print(f"\n{tiempo_total}er segundo:")
 
         # Recorrer cada línea y verificar si debe moverse o ensamblar
         for linea in range(maquina.cantidad_lineas):
             instruccion = instrucciones_por_linea.obtener_por_posicion(linea)
             tiempo_ensamblaje_restante = tiempos_ensamblaje.obtener_por_posicion(linea)
+            
 
             # Si no hay más instrucciones en esta línea, saltar a la siguiente
             if instruccion is None and instrucciones_pendientes.tiene_instrucciones_pendientes(linea):
@@ -65,32 +71,36 @@ def simular_proceso_creacion(maquina, producto):
 
             posicion_brazo = movimientos_brazos.obtener_por_posicion(linea)
             _, componente = instruccion
+            componente -=1
 
             # Si la línea está ensamblando, continuar con el ensamblaje
             if tiempo_ensamblaje_restante > 0:
-                print(f"Línea {linea + 1} ensamblando componente {componente}")
+                print(f"Línea {linea + 1} ensamblando componente {componente + 1}")
                 tiempos_ensamblaje.actualizar_por_posicion(linea, tiempo_ensamblaje_restante - 1)
 
-                if tiempo_ensamblaje_restante - 1 == 0:
-                    print(f"Línea {linea + 1} termina de ensamblar el componente {componente}")
-                    instrucciones_por_linea.actualizar_por_posicion(linea, None)
+                if tiempo_ensamblaje_restante -1 == 0:
+                        print(f"Línea {linea + 1} termina de ensamblar el componente {componente}")
+                        instrucciones_por_linea.actualizar_por_posicion(linea, None)
+                        
                 continue
 
             # Si el brazo no está en la posición correcta, mover el brazo
             if posicion_brazo < componente:
                 movimientos_brazos.actualizar_por_posicion(linea, posicion_brazo + 1)
-                producto.historial_ensamblaje.agregar_accion(tiempo_total, linea + 1, f"Moviendo brazo hacia el componente {componente}")
+                producto.historial_ensamblaje.agregar_accion(tiempo_total, linea + 1, f"Moviendo brazo hacia el componente {componente + 1}")
                 print(f"Línea {linea + 1} moviendo brazo hacia el componente {componente}. Ahora en posición {posicion_brazo + 1}")
+                contador +=1
             elif posicion_brazo > componente:
                 movimientos_brazos.actualizar_por_posicion(linea, posicion_brazo - 1)
-                producto.historial_ensamblaje.agregar_accion(tiempo_total, linea + 1, f"Moviendo brazo hacia el componente {componente}")
+                producto.historial_ensamblaje.agregar_accion(tiempo_total, linea + 1, f"Moviendo brazo hacia el componente {componente + 1}")
                 print(f"Línea {linea + 1} moviendo brazo hacia el componente {componente}. Ahora en posición {posicion_brazo - 1}")
+                contador +=1
             else:
-                # Si el brazo ya está en la posición correcta, comenzar el ensamblaje
-                producto.historial_ensamblaje.agregar_accion(tiempo_total, linea + 1, f"Ensamblando componente {componente}")
-                tiempos_ensamblaje.actualizar_por_posicion(linea, maquina.tiempo_ensamblaje)  # Establecer el tiempo de ensamblaje
-                print(f"Línea {linea + 1} comenzando ensamblaje del componente {componente}")
-
+                tiempo_total += maquina.tiempo_ensamblaje
+                producto.historial_ensamblaje.agregar_accion(tiempo_total , linea + 1, f"Ensamblando componente {componente + 1}")    
+                tiempos_ensamblaje.actualizar_por_posicion(linea, maquina.tiempo_ensamblaje)
+                contador = 0
+                print(f"Línea {linea + 1} comenzando ensamblaje del componente {componente + 1}")
     producto.tiempo_total_ensamblaje = tiempo_total
     print(f"Producto {producto.nombre} ensamblado en {tiempo_total} segundos.\n")
 

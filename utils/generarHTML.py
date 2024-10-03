@@ -3,7 +3,7 @@ def generar_reporte_html(maquina, producto, ruta_salida_html):
         archivo_html.write("<html><body>")
         archivo_html.write("<table border='1'><tr><th>Segundo</th><th>Línea</th><th>Instruccion</th></tr>")
         segundo = 1
-        while segundo <= producto.historial_ensamblaje.segundos.longitud():
+        while segundo <= producto.historial_ensamblaje.segundos.longitud() :
             acciones = producto.historial_ensamblaje.obtener_acciones_por_segundo(segundo)
             if acciones:
                 accion_actual = acciones.cabeza
