@@ -1,0 +1,176 @@
+/* General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #300061;
+    animation: fadeIn 1s ease-in-out;
+}
+
+h3 {
+    margin-bottom: 10px;
+    animation: fadeInUp 1s ease;
+    color: rgb(0, 0, 0);
+}
+
+/* Animación de entrada general */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilos específicos para reportes */
+.reportes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px; /* Añadido para mantener consistencia con el padding de .container en index.css */
+}
+
+.reporte-item {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    width: calc(33% - 40px);
+    background-color: #e0e0e0; /* Se agregó color de fondo para uniformidad */
+    animation: fadeInUp 1s ease; /* Añadir animación */
+    transition: transform 0.3s ease; /* Añadir efecto de transición */
+}
+
+.reporte-item:hover {
+    transform: translateY(-10px); /* Efecto al pasar el ratón */
+}
+
+.reporte-item h3 {
+    margin: 0 0 10px;
+    color: rgb(0, 0, 0); /* Establecer el color del texto a blanco para los títulos dentro de reporte-item */
+}
+
+.reporte-item p a {
+    text-decoration: none;
+    color: blue;
+}
+
+/* Popup (si se necesita) */
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.popup-content {
+    text-align: center;
+}
+
+.popup select {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+}
+
+/* Botón de proceso con animación (si se necesita) */
+.process-btn {
+    background-color: #2196F3;
+    color: white;
+    padding: 10px 20px;   
+    border-radius: 10px;
+    cursor: pointer;
+    margin: auto;
+    margin-top: 20px;
+    display: flex;
+    margin-bottom: 0px;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.process-btn:hover {
+    background-color: #1976D2;
+    transform: scale(1.05);
+}
+
+.process-btn:active {
+    transform: scale(0.95);
+}
+
+.navbar {
+    background-color: #000000;
+    padding: 10px;
+    text-align: center;
+    animation: fadeInDown 1s ease;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.navbar ul {
+    list-style-type: none;
+}
+
+.navbar ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+}
+
+.navbar ul li a:hover {
+    text-decoration: none;
+}
+
+.navbar ul li a::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    bottom: -5px;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease-in-out;
+}
+
+.navbar ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}

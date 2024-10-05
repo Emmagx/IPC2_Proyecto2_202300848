@@ -26,4 +26,4 @@ def generar_grafo_ensamblaje(producto, ruta_salida_grafo):
         actual_instruccion = actual_instruccion.siguiente
         segundo_actual += 1
 
-    dot.render(ruta_salida_grafo, format='png')
+    dot.render(ruta_salida_grafo, format='png', cleanup=True)
