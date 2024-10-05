@@ -154,6 +154,9 @@ def get_components(maquina_nombre):
     return componentes.to_json()
 
 
+@app.route('/ayuda')
+def ayuda():
+    return render_template('ayuda.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

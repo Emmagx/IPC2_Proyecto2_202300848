@@ -40,7 +40,7 @@ h3 {
 }
 
 .container {
-    display: grid;
+    display: flex;
     grid-template-columns: 1fr 2fr 1fr;
     grid-gap: 20px;
     padding: 20px;
@@ -241,4 +241,9 @@ select {
     background-color: #4caf50;
     border-radius: 10px;
     transition: width 0.5s ease;
+}
+
+.imagen-github{
+    width: 100%;
+    height: 100%;
 }
