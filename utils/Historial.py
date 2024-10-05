@@ -25,7 +25,7 @@ class HistorialEnsamblaje:
         return self.segundos.obtener_por_posicion(segundo - 1)
 
 
-    def obtener_por_posicion(self, posicion):
+    def obtener_por_posicion(self, posicion):   
         actual = self.cabeza
         contador = 0
         while actual:
