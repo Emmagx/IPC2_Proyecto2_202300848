@@ -88,13 +88,13 @@ class ListaSimpleEnlazada:
         return False
     
     def obtener_nombres(self):
-            nombres = ListaSimpleEnlazada()
-            actual = self.cabeza
-            while actual:
-                if hasattr(actual.valor, 'nombre'):
-                    nombres.insertar(actual.valor.nombre) 
-                actual = actual.siguiente
-            return nombres
+        nombres = ListaSimpleEnlazada()
+        actual = self.cabeza
+        while actual:
+            if hasattr(actual.valor, 'nombre'):
+                nombres.insertar(actual.valor.nombre) 
+            actual = actual.siguiente
+        return nombres
     
     def to_json(self):
         resultado = "["
@@ -106,3 +106,11 @@ class ListaSimpleEnlazada:
                 resultado += ", "
         resultado += "]"
         return resultado
+    
+    def to_list_enlazada(self):
+        nueva_lista = ListaSimpleEnlazada()
+        actual = self.cabeza
+        while actual:
+            nueva_lista.insertar(actual.valor)  # Copiamos el valor a la nueva lista enlazada
+            actual = actual.siguiente
+        return nueva_lista

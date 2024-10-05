@@ -10,6 +10,40 @@ body {
     background-color: #300061;
     color: #fff;
     transition: background-color 0.3s ease;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Animaciones de entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Navbar */
@@ -17,6 +51,7 @@ body {
     background-color: #000000;
     padding: 10px;
     text-align: center;
+    animation: fadeInDown 1s ease;
 }
 
 .navbar-ayuda ul {
@@ -45,11 +80,13 @@ body {
     align-items: center;
     padding: 20px;
     gap: 20px;
+    animation: fadeIn 1.5s ease;
 }
 
 /* Panels */
 .top-panel-ayuda {
     margin-bottom: 20px;
+    animation: fadeInUp 1s ease;
 }
 
 .left-panel-ayuda,
@@ -62,6 +99,7 @@ body {
     width: 80%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInUp 1s ease;
 }
 
 .left-panel-ayuda ul {
@@ -93,7 +131,7 @@ body {
     margin-bottom: 15px;
 }
 
-/* Animations */
+/* Animations on hover */
 .left-panel-ayuda:hover,
 .center-panel-ayuda:hover,
 .bottom-panel-ayuda:hover {

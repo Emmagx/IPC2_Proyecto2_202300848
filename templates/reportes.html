@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/reporte.css">
+    <title>Reportes</title>
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="reportes">Reportes</a></li>
+            <li><a href="/ayuda">Ayuda</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1>Reportes</h1>
+        {% if reportes %}
+            <div class="reportes">
+                {% for reporte in reportes %}
+                    <div class="reporte-item">
+                        <h3>Producto: {{ reporte.nombre }}</h3>
+                        <p><a href="{{ url_for('static', filename=reporte.nombre) }}" target="_blank">Ver Reporte</a></p>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p>No hay reportes disponibles.</p>
+        {% endif %}
+        <form action="/Salida" method="post">
+            <button type="submit">Ejecutar Simulación y Descargar Salida</button>
+        </form>
+    </div>
+</body>
+</html>

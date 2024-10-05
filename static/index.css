@@ -314,3 +314,30 @@ select {
     border-radius: 10px;
     transition: width 0.5s ease;
 }
+.error-message {
+    background-color: #ffcccc;
+    color: #a94442;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #a94442;
+}
+.delete-button-container {
+    text-align: center;
+    margin-bottom: 20px; /* Espaciado debajo del botón */
+}
+
+.delete-btn {
+    background-color: #ff4c4c; /* Rojo */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s ease; /* Transición suave */
+}
+
+.delete-btn:hover {
+    background-color: #ff1c1c; /* Rojo más oscuro al pasar el ratón */
+}

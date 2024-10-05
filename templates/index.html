@@ -10,10 +10,12 @@
     <nav class="navbar">
         <ul>
             <li><a href="/">Inicio</a></li>
-            <li><a href="reportes.html">Reportes</a></li>
+            <li><a href="reportes">Reportes</a></li>
             <li><a href="/ayuda">Ayuda</a></li>
         </ul>
+        
     </nav>
+
     <div class="container">
         <div class="left-panel">
             <h3>Subir archivo</h3>
@@ -21,6 +23,7 @@
                 <input type="file" id="file-upload" name="file" accept=".xml" required>
                 <button type="submit" class="upload-btn">Subir Archivo</button>
             </form>
+
             <h3>Componentes</h3>
             <ul id="componentes-list">
                 {% if componentes %}
@@ -64,7 +67,10 @@
                 }
                 
             </script>
-            
+                    <div class="delete-button-container"></div>
+                    <div>
+                        <button id="delete-files-btn" class="delete-btn">Eliminar Archivos</button>
+                    </div>
         </div>
         
         <div class="center-panel">
@@ -91,7 +97,11 @@
                     {% endif %}
                 </tbody>
             </table>
-            
+                {% if error %}
+                <div class="error-message">
+                    <p>{{ error }}</p>
+                </div>
+                {% endif %}
             <form action="/simulate" method="POST" enctype="multipart/form-data">
                 <label for="maquina">Máquina</label>
                 <select name="maquina" id="popup-maquina" onchange="loadComponents(this.value)" required>
@@ -137,6 +147,24 @@
                 </div>
             </div>
         </div>
-
+        <script>
+            document.getElementById("delete-files-btn").addEventListener("click", function() {
+                fetch("/delete_files", {
+                    method: "POST"
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Error en la red');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    alert(data.message);
+                })
+                .catch(error => {
+                    console.error("Error al eliminar archivos:", error);
+                });
+            });
+        </script>
 </body>
 </html>

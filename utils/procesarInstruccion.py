@@ -118,8 +118,6 @@ def simular_proceso_creacion(maquina, producto):
 
     return ruta_grafo + ".png", ruta_reporte_html, tiempo_total
 
-
-
     
 def ejecutar_simulacion(ruta_archivo_xml, ruta_salida_xml):
     maquinas = analizarArchivo(ruta_archivo_xml)
