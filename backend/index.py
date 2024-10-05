@@ -77,7 +77,7 @@ def upload_file():
             
             return render_template('index.html', datos=tabla_datos, componentes=None, maquinas=nombres_maquinas, producto=nombres_productos, report_html=None)
 
-    return render_template('index.html', report_html=None)
+    return render_template('index.html', report_html=None, )
 
 @app.route('/simulate', methods=['POST'])
 def simulate():
