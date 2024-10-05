@@ -4,7 +4,7 @@ class HistorialEnsamblaje:
     def __init__(self):
         self.segundos = ListaSimpleEnlazada()
 
-    def agregar_accion(self, segundo, linea, componente):
+    def agregar_accion(self, segundo, linea, componente, do):
         # Asegúrate de que haya suficientes posiciones en 'segundos'
         while self.segundos.longitud() < segundo:
             self.segundos.insertar(ListaSimpleEnlazada())
@@ -18,7 +18,7 @@ class HistorialEnsamblaje:
             self.segundos.actualizar_por_posicion(segundo - 1, acciones_en_segundo)
 
         # Crear una nueva acción de ensamblaje y agregarla a la lista
-        nueva_accion = AccionEnsamblaje(linea, componente)
+        nueva_accion = AccionEnsamblaje(linea, componente, do)
         acciones_en_segundo.insertar(nueva_accion)
 
     def obtener_acciones_por_segundo(self, segundo):

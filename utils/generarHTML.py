@@ -10,7 +10,10 @@ def generar_reporte_html(maquina, producto, ruta_salida_html):
                 while accion_actual:
                     linea = accion_actual.valor.linea  # Accedemos a la línea
                     componente = accion_actual.valor.componente  # Accedemos al componente
-                    archivo_html.write(f"<tr><td>{segundo}</td><td>{linea}</td><td>{componente}</td></tr>")
+                    if accion_actual.valor.do == "ensamblaje":
+                        archivo_html.write(f"<tr><td>{segundo}</td><td>{linea}</td><td>Ensamblando componente {componente}</td></tr>")
+                    else:
+                        archivo_html.write(f"<tr><td>{segundo}</td><td>{linea}</td><td>Moviendo a {componente}</td></tr>")
                     accion_actual = accion_actual.siguiente
             segundo += 1
 

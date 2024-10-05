@@ -6,6 +6,7 @@ from utils.salida import generar_salida_xml
 from utils.generarHTML import generar_reporte_html
 from utils.generarGrafo import generar_grafo_ensamblaje
 from utils.instruccion import InstruccionesPendientes
+from utils.instruccion import Instruccion
 def extraer_linea_componente(instruccion):
     linea_caracter = instruccion.obtener(1)  
     componente_caracter = instruccion.obtener(3)
@@ -42,7 +43,7 @@ def simular_proceso_creacion(maquina, producto):
     for linea in range(maquina.cantidad_lineas):
         if instrucciones_pendientes.tiene_instrucciones_pendientes(linea):  # Si hay instrucciones pendientes en esa línea
             componente = instrucciones_pendientes.obtener_siguiente_instruccion(linea)
-            instrucciones_por_linea.actualizar_por_posicion(linea, (linea, componente))
+            instrucciones_por_linea.actualizar_por_posicion(linea, Instruccion(linea, componente))
 
     # Mientras haya instrucciones pendientes o en progreso
     contador = 0
@@ -59,19 +60,18 @@ def simular_proceso_creacion(maquina, producto):
             instruccion = instrucciones_por_linea.obtener_por_posicion(linea)
             tiempo_ensamblaje_restante = tiempos_ensamblaje.obtener_por_posicion(linea)
             
-
             # Si no hay más instrucciones en esta línea, saltar a la siguiente
             if instruccion is None and instrucciones_pendientes.tiene_instrucciones_pendientes(linea):
                 componente = instrucciones_pendientes.obtener_siguiente_instruccion(linea)
-                instrucciones_por_linea.actualizar_por_posicion(linea, (linea, componente))
-                instruccion = (linea, componente)
+                instrucciones_por_linea.actualizar_por_posicion(linea, Instruccion(linea, componente))
+                instruccion = Instruccion(linea, componente)  # Crear nueva instrucción
 
             if instruccion is None:
                 continue  # Si no hay instrucción, saltar a la siguiente línea
 
             posicion_brazo = movimientos_brazos.obtener_por_posicion(linea)
-            _, componente = instruccion
-            componente -=1
+            componente = instruccion.componente
+            componente -= 1 
 
             # Si la línea está ensamblando, continuar con el ensamblaje
             if tiempo_ensamblaje_restante > 0:
@@ -88,27 +88,27 @@ def simular_proceso_creacion(maquina, producto):
             if posicion_brazo < componente:
                 print("posicion < componente")
                 movimientos_brazos.actualizar_por_posicion(linea, posicion_brazo + 1)
-                producto.historial_ensamblaje.agregar_accion(tiempo_total, linea + 1, f"Moviendo brazo hacia el componente {componente + 1}")
+                producto.historial_ensamblaje.agregar_accion(tiempo_total, linea + 1, f" {componente + 1}", "moviendo")
                 print(f"Línea {linea + 1} moviendo brazo hacia el componente {componente}. Ahora en posición {posicion_brazo + 1}")
-                contador +=1
+                contador += 1
             elif posicion_brazo > componente:
                 print("posicion > componente")
                 movimientos_brazos.actualizar_por_posicion(linea, posicion_brazo - 1)
-                producto.historial_ensamblaje.agregar_accion(tiempo_total, linea + 1, f"Moviendo brazo hacia el componente {componente + 1}")
+                producto.historial_ensamblaje.agregar_accion(tiempo_total, linea + 1, f"{componente + 1}", "moviendo")
                 print(f"Línea {linea + 1} moviendo brazo hacia el componente {componente}. Ahora en posición {posicion_brazo - 1}")
-                contador +=1
+                contador += 1
             else:
                 print("posicion == componente")
                 tiempo_total += maquina.tiempo_ensamblaje
-                producto.historial_ensamblaje.agregar_accion(tiempo_total , linea + 1, f"Ensamblando componente {componente + 1}")    
+                producto.historial_ensamblaje.agregar_accion(tiempo_total , linea + 1, f"{componente + 1}", "ensamblaje")    
                 tiempos_ensamblaje.actualizar_por_posicion(linea, maquina.tiempo_ensamblaje)
                 contador = 0
                 print(f"segundos {tiempo_total}")
                 print(f"Línea {linea + 1} comenzando ensamblaje del componente {componente + 1}")
+    
     producto.tiempo_total_ensamblaje = tiempo_total
     print(f"Producto {producto.nombre} ensamblado en {tiempo_total} segundos.\n")
-
-    # Generar el reporte y el grafo como antes
+    # Generar reporte y grafo como antes
     ruta_reporte_html = f"static/reporte_{producto.nombre}.html"
     ruta_grafo = f"static/grafo_{producto.nombre}"
     generar_reporte_html(maquina, producto, ruta_reporte_html)
@@ -117,6 +117,7 @@ def simular_proceso_creacion(maquina, producto):
     print(f"Grafo de ensamblaje generado: {ruta_grafo}")
 
     return ruta_grafo + ".png", ruta_reporte_html, tiempo_total
+
 
 
     

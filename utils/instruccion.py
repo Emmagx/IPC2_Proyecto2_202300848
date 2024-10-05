@@ -25,3 +25,8 @@ class InstruccionesPendientes:
     def tiene_instrucciones_pendientes(self, linea):
         lista_instrucciones = self.lineas.obtener_por_posicion(linea)
         return lista_instrucciones.cabeza is not None
+
+class Instruccion:
+    def __init__(self, linea, componente):
+        self.linea = linea
+        self.componente = componente

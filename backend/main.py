@@ -36,6 +36,6 @@ if __name__ == "__main__":
     # Llamar a la función para eliminar imágenes antes de ejecutar la simulación
     eliminar_imagenes()
     
-    ruta_archivo_xml = 'entrada.xml'
+    ruta_archivo_xml = 'ArchivoPrueba.xml'
     ruta_salida = 'salida.xml'
     ejecutar_simulacion(ruta_archivo_xml, ruta_salida)
