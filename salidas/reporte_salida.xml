@@ -1,448 +1,261 @@
 <?xml version='1.0' encoding='utf-8'?>
 <SalidaSimulacion>
     <Maquina>
-        <Nombre>M01PC2</Nombre>
+        <Nombre>MC01IPC2</Nombre>
         <ListadoProductos>
             <Producto>
-                <Nombre>Audífonos Bluetooth</Nombre>
-                <TiempoTotal>20</TiempoTotal>
+                <Nombre>Reloj</Nombre>
+                <TiempoTotal>25</TiempoTotal>
                 <ElaboracionOptima>
                     <Tiempo NoSegundo="1">
-                        <Linea NoLinea="1">L1C 2</Linea>
-                        <Linea NoLinea="2">L2C 3</Linea>
-                        <Linea NoLinea="3">L3C 2</Linea>
+                        <Linea NoLinea="1">L1C 3</Linea>
                         </Tiempo>
                     <Tiempo NoSegundo="2" />
-                    <Tiempo NoSegundo="3" />
-                    <Tiempo NoSegundo="4">
-                        <Linea NoLinea="1">L1C2</Linea>
-                        <Linea NoLinea="2">L2C 3</Linea>
+                    <Tiempo NoSegundo="3">
+                        <Linea NoLinea="2">L2C1</Linea>
+                        <Linea NoLinea="3">L3C 5</Linea>
+                        <Linea NoLinea="4">L4C 2</Linea>
                         </Tiempo>
-                    <Tiempo NoSegundo="5" />
-                    <Tiempo NoSegundo="6">
-                        <Linea NoLinea="3">L3C2</Linea>
+                    <Tiempo NoSegundo="4" />
+                    <Tiempo NoSegundo="5">
+                        <Linea NoLinea="5">L5C1</Linea>
+                        <Linea NoLinea="6">L6C 6</Linea>
                         </Tiempo>
-                    <Tiempo NoSegundo="7" />
-                    <Tiempo NoSegundo="8">
-                        <Linea NoLinea="2">L2C3</Linea>
-                        <Linea NoLinea="1">L1C 4</Linea>
-                        <Linea NoLinea="3">L3C 8</Linea>
+                    <Tiempo NoSegundo="6" />
+                    <Tiempo NoSegundo="7">
+                        <Linea NoLinea="7">L7C1</Linea>
+                        <Linea NoLinea="1">L1C 3</Linea>
+                        <Linea NoLinea="3">L3C 5</Linea>
                         </Tiempo>
+                    <Tiempo NoSegundo="8" />
                     <Tiempo NoSegundo="9">
-                        <Linea NoLinea="1">L1C 4</Linea>
-                        <Linea NoLinea="2">L2C 7</Linea>
-                        <Linea NoLinea="3">L3C 8</Linea>
+                        <Linea NoLinea="4">L4C2</Linea>
+                        <Linea NoLinea="6">L6C 6</Linea>
                         </Tiempo>
                     <Tiempo NoSegundo="10" />
                     <Tiempo NoSegundo="11" />
                     <Tiempo NoSegundo="12">
-                        <Linea NoLinea="1">L1C4</Linea>
-                        <Linea NoLinea="2">L2C 7</Linea>
-                        <Linea NoLinea="3">L3C 8</Linea>
+                        <Linea NoLinea="1">L1C3</Linea>
+                        <Linea NoLinea="3">L3C 5</Linea>
+                        <Linea NoLinea="6">L6C 6</Linea>
                         </Tiempo>
                     <Tiempo NoSegundo="13">
-                        <Linea NoLinea="2">L2C 7</Linea>
-                        <Linea NoLinea="3">L3C 8</Linea>
-                        </Tiempo>
-                    <Tiempo NoSegundo="14">
-                        <Linea NoLinea="2">L2C 7</Linea>
-                        <Linea NoLinea="3">L3C 8</Linea>
-                        </Tiempo>
-                    <Tiempo NoSegundo="15" />
-                    <Tiempo NoSegundo="16" />
-                    <Tiempo NoSegundo="17">
-                        <Linea NoLinea="2">L2C7</Linea>
-                        <Linea NoLinea="3">L3C 8</Linea>
-                        </Tiempo>
-                    <Tiempo NoSegundo="18" />
-                    <Tiempo NoSegundo="19" />
-                    <Tiempo NoSegundo="20">
-                        <Linea NoLinea="3">L3C8</Linea>
-                        </Tiempo>
-                    </ElaboracionOptima>
-                </Producto>
-            <Producto>
-                <Nombre>Mouse Inalámbrico</Nombre>
-                <TiempoTotal>29</TiempoTotal>
-                <ElaboracionOptima>
-                    <Tiempo NoSegundo="1">
-                        <Linea NoLinea="1">L1C 2</Linea>
-                        <Linea NoLinea="2">L2C 3</Linea>
-                        <Linea NoLinea="3">L3C 2</Linea>
-                        </Tiempo>
-                    <Tiempo NoSegundo="2" />
-                    <Tiempo NoSegundo="3" />
-                    <Tiempo NoSegundo="4">
-                        <Linea NoLinea="1">L1C2</Linea>
-                        <Linea NoLinea="2">L2C 3</Linea>
-                        </Tiempo>
-                    <Tiempo NoSegundo="5" />
-                    <Tiempo NoSegundo="6">
-                        <Linea NoLinea="3">L3C2</Linea>
-                        </Tiempo>
-                    <Tiempo NoSegundo="7" />
-                    <Tiempo NoSegundo="8">
-                        <Linea NoLinea="2">L2C3</Linea>
-                        <Linea NoLinea="1">L1C1</Linea>
                         <Linea NoLinea="3">L3C 5</Linea>
-                        </Tiempo>
-                    <Tiempo NoSegundo="9" />
-                    <Tiempo NoSegundo="10" />
-                    <Tiempo NoSegundo="11">
-                        <Linea NoLinea="1">L1C1</Linea>
-                        <Linea NoLinea="2">L2C 6</Linea>
-                        <Linea NoLinea="3">L3C 5</Linea>
-                        </Tiempo>
-                    <Tiempo NoSegundo="12">
-                        <Linea NoLinea="2">L2C 6</Linea>
-                        <Linea NoLinea="3">L3C 5</Linea>
-                        </Tiempo>
-                    <Tiempo NoSegundo="13">
-                        <Linea NoLinea="2">L2C 6</Linea>
+                        <Linea NoLinea="6">L6C 6</Linea>
                         </Tiempo>
                     <Tiempo NoSegundo="14" />
                     <Tiempo NoSegundo="15">
-                        <Linea NoLinea="3">L3C5</Linea>
-                        <Linea NoLinea="1">L1C 3</Linea>
+                        <Linea NoLinea="7">L7C1</Linea>
                         </Tiempo>
                     <Tiempo NoSegundo="16" />
                     <Tiempo NoSegundo="17">
-                        <Linea NoLinea="2">L2C6</Linea>
-                        <Linea NoLinea="1">L1C 3</Linea>
+                        <Linea NoLinea="3">L3C5</Linea>
+                        <Linea NoLinea="6">L6C 6</Linea>
                         </Tiempo>
-                    <Tiempo NoSegundo="18" />
+                    <Tiempo NoSegundo="18">
+                        <Linea NoLinea="1">L1C2</Linea>
+                        </Tiempo>
                     <Tiempo NoSegundo="19" />
                     <Tiempo NoSegundo="20">
-                        <Linea NoLinea="1">L1C3</Linea>
-                        <Linea NoLinea="1">L1C 7</Linea>
+                        <Linea NoLinea="6">L6C6</Linea>
                         </Tiempo>
-                    <Tiempo NoSegundo="21">
-                        <Linea NoLinea="1">L1C 7</Linea>
-                        </Tiempo>
-                    <Tiempo NoSegundo="22">
-                        <Linea NoLinea="1">L1C 7</Linea>
-                        </Tiempo>
-                    <Tiempo NoSegundo="23">
-                        <Linea NoLinea="1">L1C 7</Linea>
-                        </Tiempo>
-                    <Tiempo NoSegundo="24" />
-                    <Tiempo NoSegundo="25" />
-                    <Tiempo NoSegundo="26">
-                        <Linea NoLinea="1">L1C7</Linea>
-                        <Linea NoLinea="1">L1C 8</Linea>
-                        </Tiempo>
-                    <Tiempo NoSegundo="27" />
-                    <Tiempo NoSegundo="28" />
-                    <Tiempo NoSegundo="29">
-                        <Linea NoLinea="1">L1C8</Linea>
-                        </Tiempo>
-                    </ElaboracionOptima>
-                </Producto>
-            </ListadoProductos>
-        </Maquina>
-    <Maquina>
-        <Nombre>Super Máquina 3000</Nombre>
-        <ListadoProductos>
-            <Producto>
-                <Nombre>CPU</Nombre>
-                <TiempoTotal>18</TiempoTotal>
-                <ElaboracionOptima>
-                    <Tiempo NoSegundo="1" />
-                    <Tiempo NoSegundo="2" />
-                    <Tiempo NoSegundo="3" />
-                    <Tiempo NoSegundo="4" />
-                    <Tiempo NoSegundo="5" />
-                    <Tiempo NoSegundo="6">
-                        <Linea NoLinea="1">L1C1</Linea>
-                        <Linea NoLinea="2">L2C 8</Linea>
-                        </Tiempo>
-                    <Tiempo NoSegundo="7">
-                        <Linea NoLinea="2">L2C 8</Linea>
-                        </Tiempo>
-                    <Tiempo NoSegundo="8">
-                        <Linea NoLinea="2">L2C 8</Linea>
-                        </Tiempo>
-                    <Tiempo NoSegundo="9">
-                        <Linea NoLinea="2">L2C 8</Linea>
-                        </Tiempo>
-                    <Tiempo NoSegundo="10">
-                        <Linea NoLinea="2">L2C 8</Linea>
-                        </Tiempo>
-                    <Tiempo NoSegundo="11">
-                        <Linea NoLinea="2">L2C 8</Linea>
-                        </Tiempo>
-                    <Tiempo NoSegundo="12">
-                        <Linea NoLinea="2">L2C 8</Linea>
-                        </Tiempo>
-                    <Tiempo NoSegundo="13" />
-                    <Tiempo NoSegundo="14" />
-                    <Tiempo NoSegundo="15" />
-                    <Tiempo NoSegundo="16" />
-                    <Tiempo NoSegundo="17" />
-                    <Tiempo NoSegundo="18">
-                        <Linea NoLinea="2">L2C8</Linea>
-                        </Tiempo>
-                    </ElaboracionOptima>
-                </Producto>
-            <Producto>
-                <Nombre>Monitor</Nombre>
-                <TiempoTotal>63</TiempoTotal>
-                <ElaboracionOptima>
-                    <Tiempo NoSegundo="1" />
-                    <Tiempo NoSegundo="2" />
-                    <Tiempo NoSegundo="3" />
-                    <Tiempo NoSegundo="4" />
-                    <Tiempo NoSegundo="5" />
-                    <Tiempo NoSegundo="6">
-                        <Linea NoLinea="1">L1C1</Linea>
-                        <Linea NoLinea="2">L2C 2</Linea>
-                        <Linea NoLinea="3">L3C 3</Linea>
-                        <Linea NoLinea="4">L4C 4</Linea>
-                        <Linea NoLinea="5">L5C 5</Linea>
-                        </Tiempo>
-                    <Tiempo NoSegundo="7" />
-                    <Tiempo NoSegundo="8" />
-                    <Tiempo NoSegundo="9" />
-                    <Tiempo NoSegundo="10" />
-                    <Tiempo NoSegundo="11" />
-                    <Tiempo NoSegundo="12">
-                        <Linea NoLinea="2">L2C2</Linea>
-                        <Linea NoLinea="3">L3C 3</Linea>
-                        <Linea NoLinea="4">L4C 4</Linea>
-                        <Linea NoLinea="5">L5C 5</Linea>
-                        </Tiempo>
-                    <Tiempo NoSegundo="13" />
-                    <Tiempo NoSegundo="14" />
-                    <Tiempo NoSegundo="15" />
-                    <Tiempo NoSegundo="16" />
-                    <Tiempo NoSegundo="17" />
-                    <Tiempo NoSegundo="18">
-                        <Linea NoLinea="3">L3C3</Linea>
-                        <Linea NoLinea="4">L4C 4</Linea>
-                        <Linea NoLinea="5">L5C 5</Linea>
-                        </Tiempo>
-                    <Tiempo NoSegundo="19" />
-                    <Tiempo NoSegundo="20" />
                     <Tiempo NoSegundo="21" />
-                    <Tiempo NoSegundo="22" />
+                    <Tiempo NoSegundo="22">
+                        <Linea NoLinea="1">L1C2</Linea>
+                        <Linea NoLinea="1">L1C1</Linea>
+                        </Tiempo>
                     <Tiempo NoSegundo="23" />
-                    <Tiempo NoSegundo="24">
-                        <Linea NoLinea="4">L4C4</Linea>
-                        <Linea NoLinea="5">L5C 5</Linea>
-                        </Tiempo>
-                    <Tiempo NoSegundo="25" />
-                    <Tiempo NoSegundo="26" />
-                    <Tiempo NoSegundo="27" />
-                    <Tiempo NoSegundo="28" />
-                    <Tiempo NoSegundo="29" />
-                    <Tiempo NoSegundo="30">
-                        <Linea NoLinea="5">L5C5</Linea>
-                        <Linea NoLinea="1">L1C 6</Linea>
-                        </Tiempo>
-                    <Tiempo NoSegundo="31">
-                        <Linea NoLinea="1">L1C 6</Linea>
-                        <Linea NoLinea="2">L2C 7</Linea>
-                        </Tiempo>
-                    <Tiempo NoSegundo="32">
-                        <Linea NoLinea="1">L1C 6</Linea>
-                        <Linea NoLinea="2">L2C 7</Linea>
-                        <Linea NoLinea="3">L3C 8</Linea>
-                        </Tiempo>
-                    <Tiempo NoSegundo="33">
-                        <Linea NoLinea="1">L1C 6</Linea>
-                        <Linea NoLinea="2">L2C 7</Linea>
-                        <Linea NoLinea="3">L3C 8</Linea>
-                        <Linea NoLinea="4">L4C 9</Linea>
-                        </Tiempo>
-                    <Tiempo NoSegundo="34">
-                        <Linea NoLinea="1">L1C 6</Linea>
-                        <Linea NoLinea="2">L2C 7</Linea>
-                        <Linea NoLinea="3">L3C 8</Linea>
-                        <Linea NoLinea="4">L4C 9</Linea>
-                        <Linea NoLinea="5">L5C1</Linea>
-                        </Tiempo>
-                    <Tiempo NoSegundo="35" />
-                    <Tiempo NoSegundo="36" />
-                    <Tiempo NoSegundo="37" />
-                    <Tiempo NoSegundo="38" />
-                    <Tiempo NoSegundo="39" />
-                    <Tiempo NoSegundo="40">
-                        <Linea NoLinea="1">L1C6</Linea>
-                        <Linea NoLinea="2">L2C 7</Linea>
-                        <Linea NoLinea="3">L3C 8</Linea>
-                        <Linea NoLinea="4">L4C 9</Linea>
-                        <Linea NoLinea="5">L5C1</Linea>
-                        </Tiempo>
-                    <Tiempo NoSegundo="41" />
-                    <Tiempo NoSegundo="42" />
-                    <Tiempo NoSegundo="43" />
-                    <Tiempo NoSegundo="44" />
-                    <Tiempo NoSegundo="45" />
-                    <Tiempo NoSegundo="46">
-                        <Linea NoLinea="2">L2C7</Linea>
-                        <Linea NoLinea="3">L3C 8</Linea>
-                        <Linea NoLinea="4">L4C 9</Linea>
-                        <Linea NoLinea="5">L5C1</Linea>
-                        </Tiempo>
-                    <Tiempo NoSegundo="47" />
-                    <Tiempo NoSegundo="48" />
-                    <Tiempo NoSegundo="49" />
-                    <Tiempo NoSegundo="50" />
-                    <Tiempo NoSegundo="51" />
-                    <Tiempo NoSegundo="52">
-                        <Linea NoLinea="3">L3C8</Linea>
-                        <Linea NoLinea="4">L4C 9</Linea>
-                        <Linea NoLinea="5">L5C1</Linea>
-                        </Tiempo>
-                    <Tiempo NoSegundo="53" />
-                    <Tiempo NoSegundo="54" />
-                    <Tiempo NoSegundo="55" />
-                    <Tiempo NoSegundo="56" />
-                    <Tiempo NoSegundo="57" />
-                    <Tiempo NoSegundo="58">
-                        <Linea NoLinea="4">L4C9</Linea>
-                        </Tiempo>
-                    <Tiempo NoSegundo="59" />
-                    <Tiempo NoSegundo="60" />
-                    <Tiempo NoSegundo="61" />
-                    <Tiempo NoSegundo="62" />
-                    <Tiempo NoSegundo="63">
-                        <Linea NoLinea="5">L5C1</Linea>
+                    <Tiempo NoSegundo="24" />
+                    <Tiempo NoSegundo="25">
+                        <Linea NoLinea="1">L1C1</Linea>
                         </Tiempo>
                     </ElaboracionOptima>
                 </Producto>
-            </ListadoProductos>
-        </Maquina>
-    <Maquina>
-        <Nombre>Maquina Extra</Nombre>
-        <ListadoProductos>
             <Producto>
-                <Nombre>Teclado Alámbrico</Nombre>
-                <TiempoTotal>18</TiempoTotal>
+                <Nombre>Cable</Nombre>
+                <TiempoTotal>14</TiempoTotal>
                 <ElaboracionOptima>
-                    <Tiempo NoSegundo="1" />
+                    <Tiempo NoSegundo="1">
+                        <Linea NoLinea="1">L1C 2</Linea>
+                        <Linea NoLinea="2">L2C 4</Linea>
+                        <Linea NoLinea="5">L5C 3</Linea>
+                        <Linea NoLinea="7">L7C 3</Linea>
+                        </Tiempo>
                     <Tiempo NoSegundo="2" />
                     <Tiempo NoSegundo="3" />
                     <Tiempo NoSegundo="4">
-                        <Linea NoLinea="1">L1C1</Linea>
-                        <Linea NoLinea="2">L2C 3</Linea>
+                        <Linea NoLinea="1">L1C2</Linea>
+                        <Linea NoLinea="2">L2C 4</Linea>
+                        <Linea NoLinea="5">L5C 3</Linea>
+                        <Linea NoLinea="7">L7C 3</Linea>
                         </Tiempo>
                     <Tiempo NoSegundo="5">
+                        <Linea NoLinea="2">L2C 4</Linea>
+                        </Tiempo>
+                    <Tiempo NoSegundo="6" />
+                    <Tiempo NoSegundo="7">
+                        <Linea NoLinea="5">L5C3</Linea>
+                        </Tiempo>
+                    <Tiempo NoSegundo="8" />
+                    <Tiempo NoSegundo="9">
+                        <Linea NoLinea="7">L7C3</Linea>
+                        </Tiempo>
+                    <Tiempo NoSegundo="10" />
+                    <Tiempo NoSegundo="11">
+                        <Linea NoLinea="2">L2C4</Linea>
+                        <Linea NoLinea="1">L1C1</Linea>
+                        </Tiempo>
+                    <Tiempo NoSegundo="12" />
+                    <Tiempo NoSegundo="13" />
+                    <Tiempo NoSegundo="14">
+                        <Linea NoLinea="1">L1C1</Linea>
+                        </Tiempo>
+                    </ElaboracionOptima>
+                </Producto>
+            <Producto>
+                <Nombre>Mouse</Nombre>
+                <TiempoTotal>12</TiempoTotal>
+                <ElaboracionOptima>
+                    <Tiempo NoSegundo="1">
+                        <Linea NoLinea="1">L1C 2</Linea>
+                        <Linea NoLinea="2">L2C 3</Linea>
+                        <Linea NoLinea="3">L3C 2</Linea>
+                        </Tiempo>
+                    <Tiempo NoSegundo="2" />
+                    <Tiempo NoSegundo="3">
+                        <Linea NoLinea="7">L7C1</Linea>
+                        </Tiempo>
+                    <Tiempo NoSegundo="4" />
+                    <Tiempo NoSegundo="5">
+                        <Linea NoLinea="1">L1C2</Linea>
                         <Linea NoLinea="2">L2C 3</Linea>
                         </Tiempo>
                     <Tiempo NoSegundo="6" />
-                    <Tiempo NoSegundo="7" />
+                    <Tiempo NoSegundo="7">
+                        <Linea NoLinea="3">L3C2</Linea>
+                        </Tiempo>
                     <Tiempo NoSegundo="8" />
                     <Tiempo NoSegundo="9">
                         <Linea NoLinea="2">L2C3</Linea>
-                        <Linea NoLinea="1">L1C 5</Linea>
+                        <Linea NoLinea="1">L1C 3</Linea>
                         </Tiempo>
-                    <Tiempo NoSegundo="10">
-                        <Linea NoLinea="1">L1C 5</Linea>
-                        </Tiempo>
-                    <Tiempo NoSegundo="11">
-                        <Linea NoLinea="1">L1C 5</Linea>
-                        <Linea NoLinea="2">L2C 4</Linea>
-                        </Tiempo>
+                    <Tiempo NoSegundo="10" />
+                    <Tiempo NoSegundo="11" />
                     <Tiempo NoSegundo="12">
-                        <Linea NoLinea="1">L1C 5</Linea>
+                        <Linea NoLinea="1">L1C3</Linea>
                         </Tiempo>
-                    <Tiempo NoSegundo="13" />
-                    <Tiempo NoSegundo="14" />
-                    <Tiempo NoSegundo="15">
-                        <Linea NoLinea="2">L2C4</Linea>
+                    </ElaboracionOptima>
+                </Producto>
+            </ListadoProductos>
+        </Maquina>
+    <Maquina>
+        <Nombre>FabricaXpress</Nombre>
+        <ListadoProductos>
+            <Producto>
+                <Nombre>Laptops</Nombre>
+                <TiempoTotal>8</TiempoTotal>
+                <ElaboracionOptima>
+                    <Tiempo NoSegundo="1">
+                        <Linea NoLinea="1">L1C 6</Linea>
                         </Tiempo>
-                    <Tiempo NoSegundo="16" />
-                    <Tiempo NoSegundo="17" />
-                    <Tiempo NoSegundo="18">
-                        <Linea NoLinea="1">L1C5</Linea>
+                    <Tiempo NoSegundo="2">
+                        <Linea NoLinea="2">L2C1</Linea>
+                        <Linea NoLinea="3">L3C 5</Linea>
+                        <Linea NoLinea="4">L4C 3</Linea>
+                        </Tiempo>
+                    <Tiempo NoSegundo="3">
+                        <Linea NoLinea="1">L1C 6</Linea>
+                        <Linea NoLinea="3">L3C 5</Linea>
+                        <Linea NoLinea="4">L4C 3</Linea>
+                        </Tiempo>
+                    <Tiempo NoSegundo="4">
+                        <Linea NoLinea="1">L1C 6</Linea>
+                        <Linea NoLinea="3">L3C 5</Linea>
+                        </Tiempo>
+                    <Tiempo NoSegundo="5">
+                        <Linea NoLinea="4">L4C3</Linea>
+                        <Linea NoLinea="1">L1C 6</Linea>
+                        <Linea NoLinea="3">L3C 5</Linea>
+                        </Tiempo>
+                    <Tiempo NoSegundo="6">
+                        <Linea NoLinea="1">L1C 6</Linea>
+                        </Tiempo>
+                    <Tiempo NoSegundo="7">
+                        <Linea NoLinea="3">L3C5</Linea>
+                        </Tiempo>
+                    <Tiempo NoSegundo="8">
+                        <Linea NoLinea="1">L1C6</Linea>
                         </Tiempo>
                     </ElaboracionOptima>
                 </Producto>
             <Producto>
-                <Nombre>Micrófono</Nombre>
-                <TiempoTotal>17</TiempoTotal>
+                <Nombre>Teléfonos móviles</Nombre>
+                <TiempoTotal>10</TiempoTotal>
                 <ElaboracionOptima>
                     <Tiempo NoSegundo="1">
                         <Linea NoLinea="1">L1C 3</Linea>
-                        <Linea NoLinea="2">L2C 3</Linea>
+                        <Linea NoLinea="2">L2C 5</Linea>
+                        <Linea NoLinea="3">L3C 2</Linea>
+                        <Linea NoLinea="4">L4C 6</Linea>
                         </Tiempo>
                     <Tiempo NoSegundo="2">
                         <Linea NoLinea="1">L1C 3</Linea>
-                        <Linea NoLinea="2">L2C 3</Linea>
+                        <Linea NoLinea="2">L2C 5</Linea>
                         </Tiempo>
-                    <Tiempo NoSegundo="3" />
+                    <Tiempo NoSegundo="3">
+                        <Linea NoLinea="3">L3C2</Linea>
+                        <Linea NoLinea="4">L4C 6</Linea>
+                        </Tiempo>
                     <Tiempo NoSegundo="4" />
-                    <Tiempo NoSegundo="5" />
-                    <Tiempo NoSegundo="6">
+                    <Tiempo NoSegundo="5">
                         <Linea NoLinea="1">L1C3</Linea>
+                        <Linea NoLinea="2">L2C 5</Linea>
+                        <Linea NoLinea="4">L4C 6</Linea>
+                        </Tiempo>
+                    <Tiempo NoSegundo="6">
+                        <Linea NoLinea="2">L2C 5</Linea>
+                        <Linea NoLinea="4">L4C 6</Linea>
                         </Tiempo>
                     <Tiempo NoSegundo="7" />
-                    <Tiempo NoSegundo="8" />
-                    <Tiempo NoSegundo="9">
-                        <Linea NoLinea="2">L2C3</Linea>
-                        <Linea NoLinea="1">L1C 4</Linea>
-                        <Linea NoLinea="2">L2C1</Linea>
+                    <Tiempo NoSegundo="8">
+                        <Linea NoLinea="2">L2C5</Linea>
+                        <Linea NoLinea="4">L4C 6</Linea>
                         </Tiempo>
-                    <Tiempo NoSegundo="10" />
-                    <Tiempo NoSegundo="11" />
-                    <Tiempo NoSegundo="12" />
-                    <Tiempo NoSegundo="13">
-                        <Linea NoLinea="1">L1C4</Linea>
-                        <Linea NoLinea="2">L2C1</Linea>
-                        </Tiempo>
-                    <Tiempo NoSegundo="14" />
-                    <Tiempo NoSegundo="15" />
-                    <Tiempo NoSegundo="16" />
-                    <Tiempo NoSegundo="17">
-                        <Linea NoLinea="2">L2C1</Linea>
+                    <Tiempo NoSegundo="9" />
+                    <Tiempo NoSegundo="10">
+                        <Linea NoLinea="4">L4C6</Linea>
                         </Tiempo>
                     </ElaboracionOptima>
                 </Producto>
             <Producto>
-                <Nombre>Extra Pruebas</Nombre>
-                <TiempoTotal>21</TiempoTotal>
+                <Nombre>Televisores</Nombre>
+                <TiempoTotal>9</TiempoTotal>
                 <ElaboracionOptima>
                     <Tiempo NoSegundo="1" />
-                    <Tiempo NoSegundo="2" />
-                    <Tiempo NoSegundo="3" />
-                    <Tiempo NoSegundo="4">
+                    <Tiempo NoSegundo="2">
                         <Linea NoLinea="1">L1C1</Linea>
                         <Linea NoLinea="2">L2C 2</Linea>
+                        <Linea NoLinea="3">L3C 4</Linea>
+                        <Linea NoLinea="4">L4C 5</Linea>
                         </Tiempo>
-                    <Tiempo NoSegundo="5" />
-                    <Tiempo NoSegundo="6" />
-                    <Tiempo NoSegundo="7" />
-                    <Tiempo NoSegundo="8">
+                    <Tiempo NoSegundo="3" />
+                    <Tiempo NoSegundo="4">
                         <Linea NoLinea="2">L2C2</Linea>
-                        <Linea NoLinea="1">L1C 4</Linea>
+                        <Linea NoLinea="3">L3C 4</Linea>
+                        <Linea NoLinea="4">L4C 5</Linea>
                         </Tiempo>
+                    <Tiempo NoSegundo="5">
+                        <Linea NoLinea="3">L3C 4</Linea>
+                        <Linea NoLinea="4">L4C 5</Linea>
+                        </Tiempo>
+                    <Tiempo NoSegundo="6" />
+                    <Tiempo NoSegundo="7">
+                        <Linea NoLinea="3">L3C4</Linea>
+                        <Linea NoLinea="4">L4C 5</Linea>
+                        </Tiempo>
+                    <Tiempo NoSegundo="8" />
                     <Tiempo NoSegundo="9">
-                        <Linea NoLinea="1">L1C 4</Linea>
-                        <Linea NoLinea="2">L2C 3</Linea>
-                        </Tiempo>
-                    <Tiempo NoSegundo="10">
-                        <Linea NoLinea="1">L1C 4</Linea>
-                        </Tiempo>
-                    <Tiempo NoSegundo="11" />
-                    <Tiempo NoSegundo="12" />
-                    <Tiempo NoSegundo="13">
-                        <Linea NoLinea="2">L2C3</Linea>
-                        </Tiempo>
-                    <Tiempo NoSegundo="14" />
-                    <Tiempo NoSegundo="15" />
-                    <Tiempo NoSegundo="16">
-                        <Linea NoLinea="1">L1C4</Linea>
-                        <Linea NoLinea="2">L2C 5</Linea>
-                        </Tiempo>
-                    <Tiempo NoSegundo="17">
-                        <Linea NoLinea="2">L2C 5</Linea>
-                        </Tiempo>
-                    <Tiempo NoSegundo="18" />
-                    <Tiempo NoSegundo="19" />
-                    <Tiempo NoSegundo="20" />
-                    <Tiempo NoSegundo="21">
-                        <Linea NoLinea="2">L2C5</Linea>
+                        <Linea NoLinea="4">L4C5</Linea>
                         </Tiempo>
                     </ElaboracionOptima>
                 </Producto>

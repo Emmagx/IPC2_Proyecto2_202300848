@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<ListaMaquinas>
+    <Maquina>
+        <NombreMaquina>ObjecTek</NombreMaquina>
+        <CantidadLineasProduccion>3</CantidadLineasProduccion>
+        <CantidadComponentes>4</CantidadComponentes>
+        <TiempoEnsamblaje>3</TiempoEnsamblaje>
+        <ListadoProductos>
+            <Producto>
+                <nombre>Refrigeradores</nombre>
+                <elaboracion>
+                L1C2                L3C1 L2C3
+                </elaboracion>
+            </Producto>
+            <Producto>
+                <nombre>Lavadoras</nombre>
+                <elaboracion>
+                L2C4            L1C1         L3C3
+                </elaboracion>
+            </Producto>
+        </ListadoProductos>
+    </Maquina>
+     <Maquina>
+        <NombreMaquina>TecnoMachine</NombreMaquina>
+        <CantidadLineasProduccion>2</CantidadLineasProduccion>
+        <CantidadComponentes>5</CantidadComponentes>
+        <TiempoEnsamblaje>3</TiempoEnsamblaje>
+        <ListadoProductos>
+            <Producto>
+                <nombre>UPS</nombre>
+                <elaboracion>
+                    L2C2 L1C1       L2C3   L2C5    L1C4
+                </elaboracion>
+            </Producto>
+        </ListadoProductos>
+    </Maquina>
+    <Maquina>
+        <NombreMaquina>esreveR</NombreMaquina>
+        <CantidadLineasProduccion>1</CantidadLineasProduccion>
+        <CantidadComponentes>3</CantidadComponentes>
+        <TiempoEnsamblaje>1</TiempoEnsamblaje>
+        <ListadoProductos>
+            <Producto>
+                <nombre>Switch</nombre>
+                <elaboracion>
+                    L1C3  L1C2    L1C1
+                </elaboracion>
+            </Producto>
+        </ListadoProductos>
+    </Maquina>
+</ListaMaquinas>
